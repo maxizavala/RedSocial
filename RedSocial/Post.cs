@@ -8,7 +8,7 @@ namespace RedSocial
 {
     public class Post
     {
-        public int id {get; set}
+        public int id { get; set; }
         public Usuario user {get; set;}
         public string contenido {get; set;}
         public List<Comentario> comentarios {get; set;}

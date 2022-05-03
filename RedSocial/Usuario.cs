@@ -19,8 +19,11 @@ namespace RedSocial
         public bool bloqueado { get; set; }
 
         public List<Usuario> amigos = new List<Usuario>();
+
         public List<Post> misPost = new List<Post>();
+
         public List<Comentario> misComentarios = new List<Comentario>();
+
         public List<Reaccion> misReacciones = new List<Reaccion>();
 
         public Usuario() { }
