@@ -26,7 +26,6 @@ namespace RedSocial
 
         public List<Reaccion> misReacciones = new List<Reaccion>();
 
-        public Usuario() { }
 
         public Usuario(int id, string dni, string nombre, string apellido, string mail, string pass, 
             int intentosFallidos, bool bloqueado) 
