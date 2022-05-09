@@ -25,15 +25,34 @@ namespace RedSocial
         public bool iniciarSesion(string user, string pass)
         {
             bool usuarioEncontrado = false;
+            int intentos = 0;
 
             foreach (Usuario usuario in usuarios) 
             {
-                if (usuario.nombre.Equals(user) && usuario.pass.Equals(pass)) 
+                if(usuario.nombre.Equals(user)) 
                 {
-                    usuarioEncontrado = true;
+                    if(!usuario.bloqueado) { 
+                        if(usuario.pass.Equals(pass){
+                            usuarioEncontrado = true;
+                            this.usuarioActual = usuario;
+                        } else {
+                            intentos++;
+                            if(intentos == usuario.intentosFallidos)
+                            {
+                                usuario.bloqueado = true;
+                                intentos=0;
+                            }
+                        }
+                    }
+                    //Se podria mostrar un mensaje si usuario.bloqueado = true;
                 }
             }
             return usuarioEncontrado;
+        }
+
+        public void cerrarSesion()
+        {
+            this.usuarioActual = null;
         }
 
         public void agregarUsuario(string usuario, string pass) 
@@ -52,5 +71,9 @@ namespace RedSocial
 
 
         }
+
+        //ABM Clase Tag
+
+
     }
 }
