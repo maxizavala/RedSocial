@@ -30,7 +30,7 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
-        public void agregarUsuario(string usuario, string pass) 
+        public void registrarUsuario(string usuario, string pass) 
         {
             idUsuarios++;
             usuarios.Add(new Usuario(idUsuarios, usuario, pass));
