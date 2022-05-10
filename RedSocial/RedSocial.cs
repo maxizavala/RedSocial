@@ -39,8 +39,9 @@ namespace RedSocial
         public void registrarUsuario(string dni, string nombre, string apellido, string mail,
                 string pass, int intentosFallidos, bool bloqueado)
         {
-            cantidadUsuarios++;
+            
             usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass, intentosFallidos, bloqueado));
+            cantidadUsuarios++;
         }
 
         public void modificarUsuario(Usuario u)
