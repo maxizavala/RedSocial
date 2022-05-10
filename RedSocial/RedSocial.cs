@@ -42,15 +42,26 @@ namespace RedSocial
             usuarios.Add(new Usuario(idUsuarios, usuario, pass));
         }
 
+
+        // Seccion de logica de Reacciones.
         public void reaccionar(Post post, Reaccion reaccion) {
 
             reaccion.usuario = usuarioActual;
-            reaccion
-            post.reacciones.Add(reaccion);
             usuarioActual.misReacciones.Add(reaccion);
+        }
 
+        public void modificarReaccion(Post p, Reaccion r) {
 
+            //busco el indice de la reaccion en la lista de posts
+            int aux = posts[p.id].reacciones.FindIndex((reaccion) => reaccion.id == r.id);
 
+            //reemplazo por nueva reaccion
+            posts[p.id].reacciones[aux] = r;
+        }
+
+        public void quitarReaccion(Post p, Reaccion r) {
+            //borro reaccion de la lista
+            posts[p.id].reacciones.Remove(r);
         }
     }
 }
