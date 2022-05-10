@@ -110,12 +110,13 @@ namespace RedSocial
         }
 
         public void eliminarPost(Post post)
-        {   
-            if(posts.Contains(post) && usuarioActual.misPost.Contains(post))
-            {
-                usuarioActual.misPost.Remove(post);
-                this.posts.Remove(post);
-            }
+        {
+
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
+
+            posts.Remove(post); //borro el post de la lista de posts
+            
         }
 
 
