@@ -10,7 +10,7 @@ namespace RedSocial
     {
         private List<Usuario> usuarios;
         public Usuario usuarioActual { get; set; }
-        private int idUsuarios;
+        private int cantidadUsuarios;
         private List<Post> posts;
         private List<Tag> tags;
 
@@ -19,7 +19,7 @@ namespace RedSocial
             usuarios = new List<Usuario>();
             posts = new List<Post>();
             tags = new List<Tag>();
-            idUsuarios = 0;
+            cantidadUsuarios = 0;
         }
 
         public bool iniciarSesion(string user, string pass)
@@ -36,21 +36,25 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
-        public void agregarUsuario(string usuario, string pass) 
+        public void registrarUsuario(string dni, string nombre, string apellido, string mail,
+                string pass, int intentosFallidos, bool bloqueado)
         {
-            idUsuarios++;
-            usuarios.Add(new Usuario(idUsuarios, usuario, pass));
+            cantidadUsuarios++;
+            usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass, intentosFallidos, bloqueado));
         }
 
-        public void reaccionar(Post post, Reaccion reaccion) {
-
-            reaccion.usuario = usuarioActual;
-            reaccion
-            post.reacciones.Add(reaccion);
-            usuarioActual.misReacciones.Add(reaccion);
-
-
-
+        public void modificarUsuario(Usuario u)
+        {
+            //Busco en la lista el indice del usuario
+            int aux = usuarios.FindIndex(usuario => usuario.id == u.id);
+            usuarios[aux] = u;
         }
+
+        public void eliminarUsuario(Usuario u)
+        {
+            //Se remueve usuario de la lista
+            usuarios.Remove(u); 
+        }
+
     }
 }
