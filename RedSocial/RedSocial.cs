@@ -36,18 +36,64 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
-        public void agregarUsuario(string usuario, string pass) 
-        {
-            idUsuarios++;
-            usuarios.Add(new Usuario(idUsuarios, usuario, pass));
-        }
 
 
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // Seccion de logica de Reacciones.
         public void reaccionar(Post post, Reaccion reaccion) {
 
             reaccion.usuario = usuarioActual;
+
             usuarioActual.misReacciones.Add(reaccion);
+
         }
 
         public void modificarReaccion(Post p, Reaccion r) {
@@ -60,7 +106,7 @@ namespace RedSocial
         }
 
         public void quitarReaccion(Post p, Reaccion r) {
-            //borro reaccion de la lista
+            //Borro reaccion de la lista
             posts[p.id].reacciones.Remove(r);
         }
     }
