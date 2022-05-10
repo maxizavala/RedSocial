@@ -36,6 +36,8 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
+        //Seccion de logica Usuarios
+
         public void registrarUsuario(string dni, string nombre, string apellido, string mail,
                 string pass, int intentosFallidos, bool bloqueado)
         {
@@ -55,6 +57,30 @@ namespace RedSocial
         {
             //Se remueve usuario de la lista
             usuarios.Remove(u); 
+        }
+
+        //Seccion Amigos
+
+        public void agregarAmigo(Usuario amigo)
+        {
+            //Se agrega a amigos al usuario
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].amigos.Add(amigo);
+
+            //El usuario que fue agregado, tambien agrega al usuario que lo agrego a amigos
+            int aux2 = usuarios.FindIndex(usuario => usuario.id == amigo.id);
+            usuarios[aux2].amigos.Add(usuarioActual);
+        }
+
+        public void quitarAmigo(Usuario exAmigo)
+        {
+            //Se elimina el amigo
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].amigos.Remove(exAmigo);
+
+            //El usuario que fue eliminado, tambien elimina al usuario que lo elimino
+            int aux2 = usuarios.FindIndex(usuario => usuario.id == exAmigo.id);
+            usuarios[aux2].amigos.Remove(usuarioActual);
         }
 
         // Seccion de logica de Reacciones.
