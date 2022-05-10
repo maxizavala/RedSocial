@@ -36,7 +36,7 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
-    public void registrarUsuario(string dni, string nombre, string apellido, string mail,
+        public void registrarUsuario(string dni, string nombre, string apellido, string mail,
                 string pass, int intentosFallidos, bool bloqueado)
         {
             cantidadUsuarios++;
@@ -83,6 +83,37 @@ namespace RedSocial
             //Borro reaccion de la lista
             posts[p.id].reacciones.Remove(r);
         }
+
+        //---------------------------METODOS DEL POSTEO-------------------
+        public void postear(Post post, List<Tag> tags)
+        {
+            usuarioActual.misPost.Add(post); // agrega post al usuario actual
+            post.tags.AddRange(tags);   // agrega tags al post
+            foreach (Tag tag in tags)
+            {
+                if(!this.tags.Exists tag){
+                    this.tags.Add(tag); // agrega tag que no esta en la lista
+                }
+            }
+
+        }
+
+        public void modificar(Post postExistente, Post modificado)
+        {
+            if (postExistente != null || this.posts.Exists(postExistente))
+            {
+                int index = this.posts.Find(tag => tag.id == postExistente.id);
+                posts[index] = modificado;
+
+            }
+        }
+
+        public void eliminarPost(Post post)
+        {
+            this.posts.Remove(post);
+        }
+
+
     }
 
 }        
