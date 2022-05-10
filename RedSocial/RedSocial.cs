@@ -88,14 +88,14 @@ namespace RedSocial
         //---------------------------METODOS DEL POSTEO-------------------
         public void postear(Post post, List<Tag> tags)
         {
-            usuarioActual.misPost.Add(post); // agrega post al usuario actual
-            post.tags.AddRange(tags);   // agrega tags al post
-            foreach (Tag tag in tags)
-            {
-                if(tags.Contains(tag)){
-                    this.tags.Add(tag); // agrega tag que no esta en la lista
-                }
-            }
+
+            post.tags = tags; //agrego la lista de tags al post
+
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].misPost.Add(post); // agrega post al usuario actual en la lista de usuarios
+           
+            posts.Add(post); //agrego post a la lista de posts
+
 
         }
 
