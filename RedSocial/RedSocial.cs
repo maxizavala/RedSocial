@@ -98,7 +98,7 @@ namespace RedSocial
 
         }
 
-        public void modificar(Post postExistente, Post modificado)
+        public void modificarPost(Post postExistente, Post modificado)
         {
             if (postExistente != null || posts.Contains(postExistente))
             {

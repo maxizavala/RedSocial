@@ -22,7 +22,6 @@ namespace RedSocial
             RedSocial miRed = new RedSocial();
 
             Form1 hijoLogin = new Form1(miRed);
-            hijoLogin.logued = false;
             hijoLogin.MdiParent = this;
             hijoLogin.Show();
         }
