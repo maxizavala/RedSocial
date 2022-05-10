@@ -4,11 +4,16 @@ namespace RedSocial
     {
 
         private RedSocial miRed;
+        public bool logeo;
         public string usuario;
-        public Form1(RedSocial redSocial)
+
+        public delegate void TransfDelegado(string usuario);
+        public TransfDelegado eventoEvento;
+        public Form1(RedSocial redSocial,bool logeo)
         {
             InitializeComponent();
             miRed = redSocial;
+            this.logeo = logeo;
       
         }
 
@@ -55,7 +60,8 @@ namespace RedSocial
         {
             if (miRed.iniciarSesion(textBox1.Text, textBox2.Text))
             {
-                label3.Text = "ACCESO PERMITIDO";
+                this.eventoEvento(textBox1.Text);
+                this.Close();
             }
             else
             {
@@ -63,37 +69,7 @@ namespace RedSocial
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_apellidoRegistro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_NombreReg_TextChanged(object sender, EventArgs e)
         {
 
         }

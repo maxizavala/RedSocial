@@ -122,7 +122,6 @@
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Nombre";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox_NombreReg
             // 
@@ -130,7 +129,6 @@
             this.textBox_NombreReg.Name = "textBox_NombreReg";
             this.textBox_NombreReg.Size = new System.Drawing.Size(125, 27);
             this.textBox_NombreReg.TabIndex = 8;
-            this.textBox_NombreReg.TextChanged += new System.EventHandler(this.textBox_NombreReg_TextChanged);
             // 
             // label5
             // 
@@ -140,7 +138,6 @@
             this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Apellido";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox_apellidoRegistro
             // 
@@ -148,7 +145,6 @@
             this.textBox_apellidoRegistro.Name = "textBox_apellidoRegistro";
             this.textBox_apellidoRegistro.Size = new System.Drawing.Size(125, 27);
             this.textBox_apellidoRegistro.TabIndex = 10;
-            this.textBox_apellidoRegistro.TextChanged += new System.EventHandler(this.textBox_apellidoRegistro_TextChanged);
             // 
             // label6
             // 
@@ -158,7 +154,6 @@
             this.label6.Size = new System.Drawing.Size(35, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "DNI";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox_DNIReg
             // 
@@ -203,9 +198,8 @@
             // 
             this.ResultadoRegistro.Location = new System.Drawing.Point(539, 480);
             this.ResultadoRegistro.Name = "ResultadoRegistro";
-            this.ResultadoRegistro.Size = new System.Drawing.Size(223, 67);
+            this.ResultadoRegistro.Size = new System.Drawing.Size(950, 650);
             this.ResultadoRegistro.TabIndex = 17;
-            this.ResultadoRegistro.Click += new System.EventHandler(this.label9_Click);
             // 
             // Form1
             // 

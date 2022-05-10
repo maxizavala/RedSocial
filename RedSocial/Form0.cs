@@ -13,17 +13,28 @@ namespace RedSocial
     public partial class Form0 : Form
     {
         private RedSocial miRed;
-        private Form1 hijoLogin;
-        //Form2 hijoMain;
+        Form1 hijoLogin;
+        Form2 hijoMain;
+
+        bool logued;
         public Form0()
         {
             InitializeComponent();
 
             RedSocial miRed = new RedSocial();
+            Form1 hijoLogin = new Form1(miRed,false);
+            logued = false;
 
-            Form1 hijoLogin = new Form1(miRed);
             hijoLogin.MdiParent = this;
+            hijoLogin.eventoEvento += TransfDelegado;
             hijoLogin.Show();
+        }
+
+        private void TransfDelegado(string usuario)
+        {
+            hijoMain = new Form2();
+            hijoMain.MdiParent = this;
+            hijoMain.Show();
         }
     }
 }
