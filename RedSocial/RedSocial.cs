@@ -10,7 +10,7 @@ namespace RedSocial
     {
         private List<Usuario> usuarios;
         public Usuario usuarioActual { get; set; }
-        private int idUsuarios;
+        private int cantidadUsuarios;
         private List<Post> posts;
         private List<Tag> tags;
 
@@ -19,7 +19,7 @@ namespace RedSocial
             usuarios = new List<Usuario>();
             posts = new List<Post>();
             tags = new List<Tag>();
-            idUsuarios = 0;
+            cantidadUsuarios = 0;
         }
 
         public bool iniciarSesion(string user, string pass)
@@ -36,67 +36,40 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
+    public void registrarUsuario(string dni, string nombre, string apellido, string mail,
+                string pass, int intentosFallidos, bool bloqueado)
+        {
+            cantidadUsuarios++;
+            usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass, intentosFallidos, bloqueado));
+        }
 
+        public void modificarUsuario(Usuario u)
+        {
+            //Busco en la lista el indice del usuario
+            int aux = usuarios.FindIndex(usuario => usuario.id == u.id);
+            usuarios[aux] = u;
+        }
 
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        public void eliminarUsuario(Usuario u)
+        {
+            //Se remueve usuario de la lista
+            usuarios.Remove(u); 
+        }
+
         // Seccion de logica de Reacciones.
-        public void reaccionar(Post post, Reaccion reaccion) {
+        public void reaccionar(Post post, Reaccion reaccion)
+        {
 
             reaccion.usuario = usuarioActual;
 
-            usuarioActual.misReacciones.Add(reaccion);
+            // Busco el indice del usuario en la lista para agregarle sus reacciones
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].misReacciones.Add(reaccion);
 
         }
 
-        public void modificarReaccion(Post p, Reaccion r) {
+        public void modificarReaccion(Post p, Reaccion r)
+        {
 
             //busco el indice de la reaccion en la lista de posts
             int aux = posts[p.id].reacciones.FindIndex((reaccion) => reaccion.id == r.id);
@@ -105,9 +78,11 @@ namespace RedSocial
             posts[p.id].reacciones[aux] = r;
         }
 
-        public void quitarReaccion(Post p, Reaccion r) {
+        public void quitarReaccion(Post p, Reaccion r)
+        {
             //Borro reaccion de la lista
             posts[p.id].reacciones.Remove(r);
         }
     }
-}
+
+}        
