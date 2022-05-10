@@ -20,7 +20,7 @@ namespace RedSocial
         {
 
             this.id = id;
-            this.user = usuario;
+            this.usuario = usuario;
             this.contenido = contenido;
             this.comentarios = comentarios;
             this.reacciones = reacciones;

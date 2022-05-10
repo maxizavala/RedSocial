@@ -26,7 +26,7 @@ namespace RedSocial
 
         private void button2_Click(object sender, EventArgs e)
         {
-            miRed.agregarUsuario(textBox1.Text, textBox2.Text);
+            //miRed.agregarUsuario(textBox1.Text, textBox2.Text);
             label3.Text = "USUARIO AGREGADO";
         }
 

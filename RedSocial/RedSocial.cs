@@ -91,7 +91,7 @@ namespace RedSocial
             post.tags.AddRange(tags);   // agrega tags al post
             foreach (Tag tag in tags)
             {
-                if(!this.tags.Exists tag){
+                if(tags.Contains(tag)){
                     this.tags.Add(tag); // agrega tag que no esta en la lista
                 }
             }
@@ -100,9 +100,9 @@ namespace RedSocial
 
         public void modificar(Post postExistente, Post modificado)
         {
-            if (postExistente != null || this.posts.Exists(postExistente))
+            if (postExistente != null || posts.Contains(postExistente))
             {
-                int index = this.posts.Find(tag => tag.id == postExistente.id);
+                int index = posts.FindIndex(tag => tag.id == postExistente.id);
                 posts[index] = modificado;
 
             }
