@@ -156,12 +156,12 @@ namespace RedSocial
             //busco al usuario en la lista de usuarios
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
 
-            //busco la reaccion correspondiente al post
+            //busco la reaccion correspondiente al post 
             Reaccion reaccionEliminar;
             if (post.reacciones != null)
             {
                 reaccionEliminar = usuarios[aux].misReacciones.Find(x => x.post.Equals(post));
-                usuarios[aux].misReacciones.Remove(reaccionEliminar);
+                usuarios[aux].misReacciones.Remove(reaccionEliminar) ;
             }
             
             usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
