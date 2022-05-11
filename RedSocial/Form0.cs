@@ -14,7 +14,7 @@ namespace RedSocial
     {
         private RedSocial miRed;
         Form1 hijoLogin;
-        Form2 hijoMain;
+        FormMain hijoMain;
 
         bool logued;
         public Form0()
@@ -32,9 +32,14 @@ namespace RedSocial
 
         private void TransfDelegado()
         {
-            hijoMain = new Form2(miRed);
+            hijoMain = new FormMain(miRed);
             hijoMain.MdiParent = this;
+            hijoMain.eventoAgregarAmigo += TransfDelegadoAgregarAmigo;
             hijoMain.Show();
         }
+        private void TransfDelegadoAgregarAmigo()
+        {
+        }
+
     }
 }

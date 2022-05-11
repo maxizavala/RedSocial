@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace RedSocial
 {
-    public partial class Form2 : Form
+    public partial class FormMain : Form
     {
         private RedSocial miRed;
 
-        public Form2(RedSocial miRed)
+        public delegate void TransfDelegadoAgregarAmigo();
+        public TransfDelegadoAgregarAmigo eventoAgregarAmigo;
+        public FormMain(RedSocial miRed)
         {
             this.miRed = miRed;
             InitializeComponent();
@@ -22,12 +24,12 @@ namespace RedSocial
             nombreCompleto.Text = miRed.usuarioActual.nombre + miRed.usuarioActual.apellido;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
 
         }

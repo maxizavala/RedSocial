@@ -40,8 +40,7 @@ namespace RedSocial
                     textBox_NombreReg.Text,
                     textBox_apellidoRegistro.Text,
                     textBox_MailReg.Text,
-                    textBox_PassReg.Text,
-                    0, false); //se quitan mas adelante
+                    textBox_PassReg.Text); //se quitan mas adelante
                 ResultadoRegistro.Text = "USUARIO AGREGADO";
             }
         }
@@ -53,10 +52,6 @@ namespace RedSocial
             {
                 this.eventoEvento();
                 this.Close();
-            }
-            else if (miRed.usuarioActual.bloqueado)
-            {
-                label3.Text = "ESTE USUARIO SE A BLOQUEADO";
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace RedSocial
 {
-    partial class Form2
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "prueba",
+            "jeje",
+            "jaja"}, -1);
             this.nombreUsuarioActual = new System.Windows.Forms.Label();
             this.nombreCompleto = new System.Windows.Forms.Label();
-            this.listBox_ListaDeAmigos = new System.Windows.Forms.ListBox();
             this.panelPost = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -39,6 +42,9 @@
             this.label_listaDeAmigos = new System.Windows.Forms.Label();
             this.button_agregarAmigo = new System.Windows.Forms.Button();
             this.button_postear = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView_Nombres = new System.Windows.Forms.ColumnHeader();
+            this.listView_apellido = new System.Windows.Forms.ColumnHeader();
             this.panelPost.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,16 +65,6 @@
             this.nombreCompleto.Name = "nombreCompleto";
             this.nombreCompleto.Size = new System.Drawing.Size(0, 20);
             this.nombreCompleto.TabIndex = 1;
-            // 
-            // listBox_ListaDeAmigos
-            // 
-            this.listBox_ListaDeAmigos.FormattingEnabled = true;
-            this.listBox_ListaDeAmigos.ItemHeight = 20;
-            this.listBox_ListaDeAmigos.Location = new System.Drawing.Point(542, 61);
-            this.listBox_ListaDeAmigos.Name = "listBox_ListaDeAmigos";
-            this.listBox_ListaDeAmigos.Size = new System.Drawing.Size(229, 324);
-            this.listBox_ListaDeAmigos.TabIndex = 2;
-            this.listBox_ListaDeAmigos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // panelPost
             // 
@@ -95,7 +91,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(473, 262);
+            this.tabPage2.Size = new System.Drawing.Size(492, 254);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -121,7 +117,7 @@
             // label_listaDeAmigos
             // 
             this.label_listaDeAmigos.AutoSize = true;
-            this.label_listaDeAmigos.Location = new System.Drawing.Point(542, 35);
+            this.label_listaDeAmigos.Location = new System.Drawing.Point(534, 32);
             this.label_listaDeAmigos.Name = "label_listaDeAmigos";
             this.label_listaDeAmigos.Size = new System.Drawing.Size(113, 20);
             this.label_listaDeAmigos.TabIndex = 6;
@@ -135,6 +131,7 @@
             this.button_agregarAmigo.TabIndex = 7;
             this.button_agregarAmigo.Text = "Agregar amigo";
             this.button_agregarAmigo.UseVisualStyleBackColor = true;
+            this.button_agregarAmigo.Click += new System.EventHandler(this.button_agregarAmigo_Click);
             // 
             // button_postear
             // 
@@ -145,18 +142,42 @@
             this.button_postear.Text = "Postear";
             this.button_postear.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_Nombres,
+            this.listView_apellido});
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
+            this.listView1.Location = new System.Drawing.Point(534, 70);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(250, 314);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // listView_Nombres
+            // 
+            this.listView_Nombres.Text = "Nombre";
+            this.listView_Nombres.Width = 120;
+            // 
+            // listView_apellido
+            // 
+            this.listView_apellido.Text = "Apellido";
+            this.listView_apellido.Width = 120;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_postear);
             this.Controls.Add(this.button_agregarAmigo);
             this.Controls.Add(this.label_listaDeAmigos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelPost);
-            this.Controls.Add(this.listBox_ListaDeAmigos);
             this.Controls.Add(this.nombreCompleto);
             this.Controls.Add(this.nombreUsuarioActual);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -174,7 +195,6 @@
 
         private Label nombreUsuarioActual;
         private Label nombreCompleto;
-        private ListBox listBox_ListaDeAmigos;
         private TabControl panelPost;
         private TabPage tabPage1;
         private TabPage tabPage2;
@@ -183,5 +203,8 @@
         private Label label_listaDeAmigos;
         private Button button_agregarAmigo;
         private Button button_postear;
+        private ListView listView1;
+        private ColumnHeader listView_Nombres;
+        private ColumnHeader listView_apellido;
     }
 }
