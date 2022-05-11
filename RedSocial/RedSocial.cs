@@ -28,10 +28,17 @@ namespace RedSocial
 
             foreach (Usuario usuario in usuarios) 
             {
-                if (usuario.nombre.Equals(user) && usuario.pass.Equals(pass)) 
+                if (usuario.intentosFallidos == 3) {
+                    usuarios[usuario.id].bloqueado = true;
+                }
+
+                if (usuario.nombre.Equals(user) && usuario.pass.Equals(pass) && usuario.bloqueado != true)
                 {
                     usuarioEncontrado = true;
+                } else if (usuario.nombre.Equals(user) && !usuario.pass.Equals(pass)) {
+                    usuarios[usuario.id].intentosFallidos++;
                 }
+
             }
             return usuarioEncontrado;
         }
@@ -39,10 +46,10 @@ namespace RedSocial
         //Seccion de logica Usuarios
 
         public void registrarUsuario(string dni, string nombre, string apellido, string mail,
-                string pass, int intentosFallidos, bool bloqueado)
+                string pass)
         {
             
-            usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass, intentosFallidos, bloqueado));
+            usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass));
             cantidadUsuarios++;
         }
 
