@@ -11,12 +11,16 @@ namespace RedSocial
 
 		public string palabra { get; set; }
 
-		public List<Post> Posts = new List<Post>();
+		public List<Post> posts { get; set; } = new List<Post>()
+			;
+
+		static public int cantidadTag = 0;
 
 		public Tag(int id, string palabra)
 		{
-			this.id = id;
+			this.id = cantidadTag;
 			this.palabra = palabra;
+			cantidadTag++;
 		}
 	}
 }

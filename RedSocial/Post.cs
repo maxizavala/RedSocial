@@ -16,15 +16,15 @@ namespace RedSocial
         public List<Tag> tags {get; set;}
         public DateTime fecha {get; set;}
 
-        public Post(int id, Usuario usuario, string contenido, List<Comentario> comentarios, List<Reaccion> reacciones, List<Tag> tags, DateTime fecha)
+        public Post(int id, Usuario usuario, string contenido, DateTime fecha)
         {
 
             this.id = id;
             this.usuario = usuario;
             this.contenido = contenido;
-            this.comentarios = comentarios;
-            this.reacciones = reacciones;
-            this.tags = tags;
+            this.comentarios = new List<Comentario>(); 
+            this.reacciones = new List<Reaccion>();
+            this.tags = new List<Tag>();
             this.fecha = fecha;
 
         }

@@ -14,6 +14,9 @@ namespace RedSocial
         private List<Post> posts;
         private List<Tag> tags;
         private List<Comentario> comentarios;
+        private int cantidadPost;
+        private int cantidadTag;
+        private int cantidadReaccion;
 
 
         public RedSocial() 
@@ -22,6 +25,10 @@ namespace RedSocial
             posts = new List<Post>();
             tags = new List<Tag>();
             cantidadUsuarios = 0;
+            cantidadPost = 0;
+            cantidadReaccion = 0;
+            cantidadTag = 0;
+
         }
 
         public bool iniciarSesion(string user, string pass)
@@ -102,6 +109,7 @@ namespace RedSocial
             // Busco el indice del usuario en la lista para agregarle sus reacciones
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misReacciones.Add(reaccion);
+            cantidadReaccion++;
 
         }
 
@@ -122,15 +130,28 @@ namespace RedSocial
         }
 
         //---------------------------METODOS DEL POSTEO-------------------
-        public void postear(Post post, List<Tag> tags)
+        public void postear(Post post, List<Tag> tag)
         {
 
-            post.tags = tags; //agrego la lista de tags al post
+            foreach (Tag t in tag)
+            {
+                //agrego los tag que no existan a la lista de tags 
+                if (!tags.Contains(t))
+                {
+                    tags.Add(t);
+                }
 
+                //agrego post a la lista post con esos tags 
+                int taux = tags.FindIndex(ta => ta.id == t.id);
+                tags[taux].posts.Add(post);
+            }
+
+            post.tags = tag; //agrego la lista de tags al post
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misPost.Add(post); // agrega post al usuario actual en la lista de usuarios
            
             posts.Add(post); //agrego post a la lista de posts
+            cantidadPost++;
 
 
         }
@@ -139,7 +160,7 @@ namespace RedSocial
         {
             if (postExistente != null || posts.Contains(postExistente))
             {
-                int index = posts.FindIndex(tag => tag.id == postExistente.id);
+                int index = posts.FindIndex(p => p.id == postExistente.id);
                 posts[index] = modificado;
 
             }
