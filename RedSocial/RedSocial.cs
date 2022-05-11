@@ -13,6 +13,8 @@ namespace RedSocial
         private int cantidadUsuarios;
         private List<Post> posts;
         private List<Tag> tags;
+        private List<Comentario> comentarios;
+
 
         public RedSocial() 
         {
@@ -207,6 +209,39 @@ namespace RedSocial
             return bPost;
         }
 
+
+       //Metodos Comentarios
+
+
+       //Comentar
+       public void Comentar(Post p,  Comentario c) {
+            
+            c.Usuario = usuarioActual;
+            c.Post = p;
+
+            comentarios.Add(c);
+            p.comentarios.Add(c);
+
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].misComentarios.Add(c);
+        }
+
+        //Modificar comentario
+        public void ModificarComentario(Comentario c)
+        {
+            int auxC = comentarios.FindIndex(comentario => comentario.Id == c.Id);
+            comentarios[auxC] = c;
+        }
+
+       //Borrar comentario
+        public void QuitarComentario(Post p, Comentario c) {
+            posts[p.id].comentarios.Remove(c);
+            
+            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux].misComentarios.Remove(c);
+
+            comentarios.Remove(c);
+        }
     }
 
 }        
