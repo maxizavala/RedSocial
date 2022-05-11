@@ -26,6 +26,7 @@ namespace RedSocial
             cantidadUsuarios = 0;
             cantidadPost = 0;
             cantidadReaccion = 0;
+
         }
 
         public bool iniciarSesion(string user, string pass)
