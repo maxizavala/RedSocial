@@ -153,9 +153,7 @@ namespace RedSocial
 
         public void eliminarPost(Post post)
         {
-
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
-            usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
 
             //busco la reaccion correspondiente al post
             Reaccion reaccionEliminar;
@@ -164,6 +162,10 @@ namespace RedSocial
                 reaccionEliminar = usuarios[aux].misReacciones.Find(x => x.post.Equals(post));
                 usuarios[aux].misReacciones.Remove(reaccionEliminar);
             }
+            
+            usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
+
+           
 
             posts.Remove(post); //borro el post de la lista de posts
             
