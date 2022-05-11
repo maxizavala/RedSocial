@@ -145,14 +145,10 @@ namespace RedSocial
             posts.Add(post); //agrego post a la lista de posts
         }
 
-        public void modificarPost(Post postExistente, Post modificado)
+        public void modificarPost(Post post)
         {
-            if (postExistente != null || posts.Contains(postExistente))
-            {
-                int index = posts.FindIndex(p => p.id == postExistente.id);
-                posts[index] = modificado;
-
-            }
+                int aux = posts.FindIndex(p => p.id == post.id);
+                posts[aux] = post;
         }
 
         public void eliminarPost(Post post)
