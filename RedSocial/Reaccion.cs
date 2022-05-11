@@ -13,7 +13,7 @@ namespace RedSocial
         public Post post { get; set; }
         public Usuario usuario{ get; set; }
 
-        public static int cantidadReaccion;
+        public static int cantidadReaccion = 0;
 
         public Reaccion(int tipo, Post post, Usuario usuario)
         {

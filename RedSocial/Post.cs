@@ -16,7 +16,7 @@ namespace RedSocial
         public List<Tag> tags {get; set;}
         public DateTime fecha {get; set;}
 
-        public static int cantidadPost;
+        public static int cantidadPost = 0;
 
         public Post(Usuario usuario, string contenido, DateTime fecha)
         {
