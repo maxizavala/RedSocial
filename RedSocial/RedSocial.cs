@@ -14,8 +14,6 @@ namespace RedSocial
         private List<Post> posts;
         private List<Tag> tags;
         private List<Comentario> comentarios;
-        private int cantidadPost;
-        private int cantidadReaccion;
 
 
         public RedSocial() 
@@ -24,9 +22,6 @@ namespace RedSocial
             posts = new List<Post>();
             tags = new List<Tag>();
             cantidadUsuarios = 0;
-            cantidadPost = 0;
-            cantidadReaccion = 0;
-
         }
 
         public bool iniciarSesion(string user, string pass)
@@ -107,7 +102,6 @@ namespace RedSocial
             // Busco el indice del usuario en la lista para agregarle sus reacciones
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misReacciones.Add(reaccion);
-            cantidadReaccion++;
 
         }
 
@@ -149,9 +143,6 @@ namespace RedSocial
             usuarios[aux].misPost.Add(post); // agrega post al usuario actual en la lista de usuarios
            
             posts.Add(post); //agrego post a la lista de posts
-            cantidadPost++;
-
-
         }
 
         public void modificarPost(Post postExistente, Post modificado)
@@ -235,8 +226,8 @@ namespace RedSocial
        //Comentar
        public void Comentar(Post p,  Comentario c) {
             
-            c.Usuario = usuarioActual;
-            c.Post = p;
+            c.usuario = usuarioActual;
+            c.post = p;
 
             comentarios.Add(c);
             p.comentarios.Add(c);
@@ -248,7 +239,7 @@ namespace RedSocial
         //Modificar comentario
         public void ModificarComentario(Comentario c)
         {
-            int auxC = comentarios.FindIndex(comentario => comentario.Id == c.Id);
+            int auxC = comentarios.FindIndex(comentario => comentario.id == c.id);
             comentarios[auxC] = c;
         }
 
