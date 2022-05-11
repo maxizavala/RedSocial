@@ -27,8 +27,7 @@ namespace RedSocial
         public List<Reaccion> misReacciones = new List<Reaccion>();
 
 
-        public Usuario(int id, string dni, string nombre, string apellido, string mail, string pass, 
-            int intentosFallidos, bool bloqueado) 
+        public Usuario(int id, string dni, string nombre, string apellido, string mail, string pass) 
         {
             this.id = id;
             this.dni = dni;
@@ -36,8 +35,8 @@ namespace RedSocial
             this.apellido = apellido;
             this.mail = mail;
             this.pass = pass;
-            this.intentosFallidos = intentosFallidos;
-            this.bloqueado = bloqueado;
+            this.intentosFallidos = 0;
+            this.bloqueado = false;
         }
     }
 }
