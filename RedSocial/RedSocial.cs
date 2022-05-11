@@ -181,6 +181,32 @@ namespace RedSocial
             return postAmigo;
         }
 
+        //Buscar posts
+        public List<Post> buscarPosts(string contenido, DateTime fechaDesde,  DateTime fechaHasta, List<Tag> t)
+        {
+            List<Post> bPost = new List<Post>();
+            foreach (Post post in posts)
+            {
+                if (post.contenido.Equals(contenido))
+                {
+                    bPost.Add(post);
+                }else if (post.fecha >= fechaDesde && post.fecha <= fechaHasta)
+                {
+                    bPost.Add(post);
+                }else
+                {
+                    foreach (Tag p in post.tags)
+                    {
+                        if (t.Contains(p))
+                        {
+                            bPost.Add(post);
+                        }
+                    }
+                }
+            }
+            return bPost;
+        }
+
     }
 
 }        
