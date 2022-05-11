@@ -152,6 +152,33 @@ namespace RedSocial
             
         }
 
+        //---------------------------MOSTRAR DATOS-------------------
+
+        //Mostrar datos usuario
+        public Usuario mostrarDatos()
+        {
+            return usuarioActual;
+        }
+
+        //Mostar posts
+        public List<Post> mostrarPost()
+        {
+            return posts;
+        }
+
+        //Mostrar posts amigo
+        public List<Post> mostrarPostAmigo()
+        {
+            List<Post> postAmigo = new List<Post>();
+            foreach (Usuario amigo in usuarioActual.amigos)
+            {
+                foreach (Post post in amigo.misPost)
+                {
+                    postAmigo.Add(post);
+                }
+            }
+            return postAmigo;
+        }
 
     }
 
