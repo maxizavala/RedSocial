@@ -34,6 +34,7 @@ namespace RedSocial
 
                 if (usuario.nombre.Equals(user) && usuario.pass.Equals(pass) && usuario.bloqueado != true)
                 {
+                    this.usuarioActual = usuario;
                     usuarioEncontrado = true;
                 } else if (usuario.nombre.Equals(user) && !usuario.pass.Equals(pass)) {
                     usuarios[usuario.id].intentosFallidos++;

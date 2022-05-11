@@ -56,7 +56,6 @@
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -112,7 +111,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(219, 67);
             this.label3.TabIndex = 6;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

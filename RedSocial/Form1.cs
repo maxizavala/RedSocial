@@ -7,7 +7,7 @@ namespace RedSocial
         public bool logeo;
         public string usuario;
 
-        public delegate void TransfDelegado(string usuario);
+        public delegate void TransfDelegado();
         public TransfDelegado eventoEvento;
         public Form1(RedSocial redSocial,bool logeo)
         {
@@ -20,11 +20,6 @@ namespace RedSocial
         public Form1() {
             InitializeComponent();
             miRed = new RedSocial();
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
             
         }
 
@@ -46,22 +41,22 @@ namespace RedSocial
                     textBox_apellidoRegistro.Text,
                     textBox_MailReg.Text,
                     textBox_PassReg.Text,
-                    0, false);
+                    0, false); //se quitan mas adelante
                 ResultadoRegistro.Text = "USUARIO AGREGADO";
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (miRed.iniciarSesion(textBox1.Text, textBox2.Text))
             {
-                this.eventoEvento(textBox1.Text);
+                this.eventoEvento();
                 this.Close();
+            }
+            else if (miRed.usuarioActual.bloqueado)
+            {
+                label3.Text = "ESTE USUARIO SE A BLOQUEADO";
             }
             else
             {

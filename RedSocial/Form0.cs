@@ -21,7 +21,7 @@ namespace RedSocial
         {
             InitializeComponent();
 
-            RedSocial miRed = new RedSocial();
+            miRed = new RedSocial();
             Form1 hijoLogin = new Form1(miRed,false);
             logued = false;
 
@@ -30,9 +30,9 @@ namespace RedSocial
             hijoLogin.Show();
         }
 
-        private void TransfDelegado(string usuario)
+        private void TransfDelegado()
         {
-            hijoMain = new Form2();
+            hijoMain = new Form2(miRed);
             hijoMain.MdiParent = this;
             hijoMain.Show();
         }

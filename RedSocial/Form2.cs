@@ -12,12 +12,22 @@ namespace RedSocial
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private RedSocial miRed;
+
+        public Form2(RedSocial miRed)
         {
+            this.miRed = miRed;
             InitializeComponent();
+            nombreUsuarioActual.Text = miRed.usuarioActual.nombre;
+            nombreCompleto.Text = miRed.usuarioActual.nombre + miRed.usuarioActual.apellido;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }
