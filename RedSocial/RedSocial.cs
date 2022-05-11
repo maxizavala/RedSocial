@@ -15,7 +15,6 @@ namespace RedSocial
         private List<Tag> tags;
         private List<Comentario> comentarios;
         private int cantidadPost;
-        private int cantidadTag;
         private int cantidadReaccion;
 
 
