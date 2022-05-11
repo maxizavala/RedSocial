@@ -153,6 +153,7 @@ namespace RedSocial
 
         public void eliminarPost(Post post)
         {
+            //busco al usuario en la lista de usuarios
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
 
             //busco la reaccion correspondiente al post
