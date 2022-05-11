@@ -160,10 +160,19 @@ namespace RedSocial
             Reaccion reaccionEliminar;
             if (post.reacciones != null)
             {
+                //elimino la reaccion correspondiente al post
                 reaccionEliminar = usuarios[aux].misReacciones.Find(x => x.post.Equals(post));
                 usuarios[aux].misReacciones.Remove(reaccionEliminar) ;
             }
-            
+            //Busco el comentario correspondiente al post
+            Comentario comentarioEliminar;
+            if (post.comentarios != null)
+            {
+                //Se elimina el comentario del post
+                comentarioEliminar = usuarios[aux].misComentarios.Find(x => x.post.Equals(post));
+                usuarios[aux].misComentarios.Remove(comentarioEliminar);
+            }
+
             usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
 
            
