@@ -56,7 +56,7 @@ namespace RedSocial
             cantidadUsuarios++;
         }
 
-        public void modificarUsuario(Usuario u)
+        private void modificarUsuario(Usuario u)
         {
             //Busco en la lista el indice del usuario
             int aux = usuarios.FindIndex(usuario => usuario.id == u.id);
@@ -82,9 +82,9 @@ namespace RedSocial
 
         //Seccion Amigos
 
-        public bool agregarAmigo(Usuario amigo)
+        private bool agregarAmigo(Usuario amigo)
         {
-            if(usuarioActual.id == amigo.id || !usuarios.Contains(amigo))
+            if(usuarioActual.id == amigo.id || usuarioActual.amigos.Contains(amigo))
             {
                 return false;
             }
@@ -355,19 +355,23 @@ namespace RedSocial
 
         //-------------------------------Metodos de busqueda-------------------------------
 
-        public void buscarAmigo(int id) {
+        public bool agregarAmigo(int id) {
             
             foreach (Usuario u in usuarios)
             {
                 if (u.id == id)
                 {
-                   agregarAmigo(u);
+                    return agregarAmigo(u);
                 }
                
             }
+
+            return false;
         }
 
-        
+
+
+
 
     }
 
