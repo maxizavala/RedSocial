@@ -63,13 +63,22 @@ namespace RedSocial
             usuarios[aux] = u;
         }
 
-        public void eliminarUsuario(Usuario u)
+        private void eliminarUsuario(Usuario u)
         {
             //Se remueve usuario de la lista
             usuarios.Remove(u);
         }
 
-       
+        public void eliminarUsuario(int id)
+        {
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.id == id)
+                {
+                    eliminarUsuario(usuario);
+                }
+            }
+        }
 
         //Seccion Amigos
 
@@ -93,7 +102,7 @@ namespace RedSocial
             
         }
 
-        public void quitarAmigo(Usuario exAmigo)
+        private void quitarAmigo(Usuario exAmigo)
         {
             //Se elimina el amigo
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
@@ -104,8 +113,19 @@ namespace RedSocial
             usuarios[aux2].amigos.Remove(usuarioActual);
         }
 
+        public void quitarAmigo(int id)
+        {
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.id == id)
+                {
+                    quitarAmigo(usuario);
+                }
+            }
+        }
+
         // Seccion de logica de Reacciones.
-        public void reaccionar(Post post, Reaccion reaccion)
+        private void reaccionar(Post post, Reaccion reaccion)
         {
 
             reaccion.usuario = usuarioActual;
@@ -114,23 +134,70 @@ namespace RedSocial
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misReacciones.Add(reaccion);
 
+            int aux2 = posts.FindIndex(p => p.id == post.id);
+            posts[aux2].reacciones.Add(reaccion);
+
         }
 
-        public void modificarReaccion(Post p, Reaccion r)
+        public void reaccionar(int id, Reaccion reaccion)
         {
+            foreach(Post p in posts)
+            {
+                if(p.id == id)
+                {
+                    reaccionar(p, reaccion);
+                }
+            }
+        }
 
+        private void modificarReaccion(Post post, Reaccion r)
+        {
+            int aux2 = posts.FindIndex(p => p.id == post.id);
+            
             //busco el indice de la reaccion en la lista de posts
-            int aux = posts[p.id].reacciones.FindIndex((reaccion) => reaccion.id == r.id);
+            int aux = posts[aux2].reacciones.FindIndex((reaccion) => reaccion.id == r.id);
 
             //reemplazo por nueva reaccion
-            posts[p.id].reacciones[aux] = r;
+            posts[aux2].reacciones[aux] = r;
         }
 
-        public void quitarReaccion(Post p, Reaccion r)
+        public void modificarReaccion(int id, Reaccion reaccion)
+        {
+            foreach (Post p in posts)
+            {
+                if (p.id == id)
+                {
+                    modificarReaccion(p, reaccion);
+                }
+            }
+        }
+
+
+        private void quitarReaccion(Post post, Reaccion r)
         {
             //Borro reaccion de la lista
-            posts[p.id].reacciones.Remove(r);
+            int aux2 = posts.FindIndex(p => p.id == post.id);
+            posts[aux2].reacciones.Remove(r);
         }
+
+        public void quitarReaccion(int id, int idReaccion)
+        {
+            foreach (Post p in posts)
+            {
+                if (p.id == id)
+                {
+                    foreach(Reaccion r2 in p.reacciones)
+                    {
+                        if (r2.id == idReaccion)
+                        {
+                            quitarReaccion(p, r2);
+                        }
+                    }
+                 
+                }
+            }
+        }
+
 
         //---------------------------METODOS DEL POSTEO-------------------
         public void postear(Post post, List<Tag> tag)
