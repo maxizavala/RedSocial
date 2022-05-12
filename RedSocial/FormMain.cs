@@ -31,7 +31,8 @@ namespace RedSocial
 
         private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
-
+            this.eventoAgregarAmigo();
+            this.Close();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace RedSocial
         private List<Comentario> comentarios;
 
 
-        public RedSocial() 
+        public RedSocial()
         {
             usuarios = new List<Usuario>();
             posts = new List<Post>();
@@ -28,7 +28,7 @@ namespace RedSocial
         {
             bool usuarioEncontrado = false;
 
-            foreach (Usuario usuario in usuarios) 
+            foreach (Usuario usuario in usuarios)
             {
                 if (usuario.intentosFallidos == 3) {
                     usuarios[usuario.id].bloqueado = true;
@@ -51,7 +51,7 @@ namespace RedSocial
         public void registrarUsuario(string dni, string nombre, string apellido, string mail,
                 string pass)
         {
-            
+
             usuarios.Add(new Usuario(cantidadUsuarios, dni, nombre, apellido, mail, pass));
             cantidadUsuarios++;
         }
@@ -66,20 +66,42 @@ namespace RedSocial
         public void eliminarUsuario(Usuario u)
         {
             //Se remueve usuario de la lista
-            usuarios.Remove(u); 
+            usuarios.Remove(u);
+        }
+
+        //Buscar usuario
+        public Usuario buscarUsuario(string nombre, string apellido)
+        {
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.nombre.Equals(nombre) && usuario.apellido.Equals(apellido))
+                {  
+                    return usuario;
+                }
+            }
+            return null;
         }
 
         //Seccion Amigos
 
-        public void agregarAmigo(Usuario amigo)
+        public bool agregarAmigo(Usuario amigo)
         {
-            //Se agrega a amigos al usuario
-            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
-            usuarios[aux].amigos.Add(amigo);
+            if(usuarioActual.id == amigo.id)
+            {
+                return false;
+            }
+            else {
+                //Se agrega a amigos al usuario
+                int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+                usuarios[aux].amigos.Add(amigo);
 
-            //El usuario que fue agregado, tambien agrega al usuario que lo agrego a amigos
-            int aux2 = usuarios.FindIndex(usuario => usuario.id == amigo.id);
-            usuarios[aux2].amigos.Add(usuarioActual);
+                //El usuario que fue agregado, tambien agrega al usuario que lo agrego a amigos
+                int aux2 = usuarios.FindIndex(usuario => usuario.id == amigo.id);
+                usuarios[aux2].amigos.Add(usuarioActual);
+
+                return true;
+            }
+            
         }
 
         public void quitarAmigo(Usuario exAmigo)
@@ -141,14 +163,14 @@ namespace RedSocial
             post.tags = tag; //agrego la lista de tags al post
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misPost.Add(post); // agrega post al usuario actual en la lista de usuarios
-           
+
             posts.Add(post); //agrego post a la lista de posts
         }
 
         public void modificarPost(Post post)
         {
-                int aux = posts.FindIndex(p => p.id == post.id);
-                posts[aux] = post;
+            int aux = posts.FindIndex(p => p.id == post.id);
+            posts[aux] = post;
         }
 
         public void eliminarPost(Post post)
@@ -162,7 +184,7 @@ namespace RedSocial
             {
                 //elimino la reaccion correspondiente al post
                 reaccionEliminar = usuarios[aux].misReacciones.Find(x => x.post.Equals(post));
-                usuarios[aux].misReacciones.Remove(reaccionEliminar) ;
+                usuarios[aux].misReacciones.Remove(reaccionEliminar);
             }
             //Busco el comentario correspondiente al post
             Comentario comentarioEliminar;
@@ -175,10 +197,10 @@ namespace RedSocial
 
             usuarios[aux].misPost.Remove(post); // borro el post de la lista de posts del usuario
 
-           
+
 
             posts.Remove(post); //borro el post de la lista de posts
-            
+
         }
 
         //---------------------------MOSTRAR DATOS-------------------
@@ -210,7 +232,7 @@ namespace RedSocial
         }
 
         //Buscar posts
-        public List<Post> buscarPosts(string contenido, DateTime fechaDesde,  DateTime fechaHasta, List<Tag> t)
+        public List<Post> buscarPosts(string contenido, DateTime fechaDesde, DateTime fechaHasta, List<Tag> t)
         {
             List<Post> bPost = new List<Post>();
             foreach (Post post in posts)
@@ -218,10 +240,10 @@ namespace RedSocial
                 if (post.contenido.Equals(contenido))
                 {
                     bPost.Add(post);
-                }else if (post.fecha >= fechaDesde && post.fecha <= fechaHasta)
+                } else if (post.fecha >= fechaDesde && post.fecha <= fechaHasta)
                 {
                     bPost.Add(post);
-                }else
+                } else
                 {
                     foreach (Tag p in post.tags)
                     {
@@ -236,12 +258,12 @@ namespace RedSocial
         }
 
 
-       //Metodos Comentarios
+        //Metodos Comentarios
 
 
-       //Comentar
-       public void Comentar(Post p,  Comentario c) {
-            
+        //Comentar
+        public void Comentar(Post p, Comentario c) {
+
             c.usuario = usuarioActual;
             c.post = p;
 
@@ -259,10 +281,10 @@ namespace RedSocial
             comentarios[auxC] = c;
         }
 
-       //Borrar comentario
+        //Borrar comentario
         public void QuitarComentario(Post p, Comentario c) {
             posts[p.id].comentarios.Remove(c);
-            
+
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misComentarios.Remove(c);
 
@@ -283,6 +305,9 @@ namespace RedSocial
                
             }
         }
+
+        public List<Usuario> getUsuarios() {return this.usuarios;}
+
     }
 
 }        
