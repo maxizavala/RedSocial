@@ -75,7 +75,7 @@ namespace RedSocial
 
         private bool agregarAmigo(Usuario amigo)
         {
-            if(usuarioActual.id == amigo.id)
+            if(usuarioActual.id == amigo.id || usuarioActual.amigos.Contains(amigo))
             {
                 return false;
             }
