@@ -291,6 +291,12 @@ namespace RedSocial
             comentarios.Remove(c);
         }
 
+
+        public List<Usuario> getUsuarios()
+        {
+            return this.usuarios;
+        }
+
         //-------------------------------Metodos de busqueda-------------------------------
 
         public void buscarAmigo(int id) {
@@ -306,7 +312,7 @@ namespace RedSocial
             }
         }
 
-        public List<Usuario> getUsuarios() {return this.usuarios;}
+        
 
     }
 
