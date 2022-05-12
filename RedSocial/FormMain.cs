@@ -30,7 +30,7 @@ namespace RedSocial
         {
             foreach(Usuario amigos in miRed.mostrarDatos().amigos)
             {
-                dataGridView_listaAmigos.Rows.Add(amigos.id,amigos.nombre,amigos.apellido,"X");
+                dataGridView_listaAmigos.Rows.Add(amigos.id,amigos.nombre,amigos.apellido,"Eliminar");
             }
         }
 
@@ -52,7 +52,7 @@ namespace RedSocial
             if (seleccionarAmigo != null && seleccionarAmigo != -1)
             {
                 miRed.quitarAmigo(int.Parse(dataGridView_listaAmigos.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
-                
+                dataGridView_listaAmigos.Rows.Remove(dataGridView_listaAmigos.Rows[seleccionarAmigo]);
             }
         }
     }

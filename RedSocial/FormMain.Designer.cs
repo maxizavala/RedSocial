@@ -125,7 +125,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(632, 457);
+            this.tabPage2.Size = new System.Drawing.Size(562, 457);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Posteos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -192,6 +192,8 @@
             this.dataGridView_listaAmigos.RowTemplate.Height = 29;
             this.dataGridView_listaAmigos.Size = new System.Drawing.Size(324, 509);
             this.dataGridView_listaAmigos.TabIndex = 9;
+            this.dataGridView_listaAmigos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorAmigo);
+            this.dataGridView_listaAmigos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminadorAmigo);
             // 
             // ID
             // 
