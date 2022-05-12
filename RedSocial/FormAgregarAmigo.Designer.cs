@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView_Usuarios = new System.Windows.Forms.DataGridView();
+            this.button_volverMenu = new System.Windows.Forms.Button();
+            this.button_agregarAmigo = new System.Windows.Forms.Button();
+            this.button_ayuda = new System.Windows.Forms.Button();
+            this.label_ayuda = new System.Windows.Forms.Label();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_volverMenu = new System.Windows.Forms.Button();
-            this.button_agregarAmigo = new System.Windows.Forms.Button();
-            this.button_ayuda = new System.Windows.Forms.Button();
-            this.label_ayuda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,44 +57,6 @@
             this.dataGridView_Usuarios.Size = new System.Drawing.Size(729, 532);
             this.dataGridView_Usuarios.TabIndex = 1;
             this.dataGridView_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionarCelda);
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Nombre";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Name.Width = 173;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 173;
-            // 
-            // Mail
-            // 
-            this.Mail.HeaderText = "Mail";
-            this.Mail.MinimumWidth = 6;
-            this.Mail.Name = "Mail";
-            this.Mail.Width = 173;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.MinimumWidth = 6;
-            this.DNI.Name = "DNI";
-            this.DNI.Width = 173;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Direccion";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            this.Id.Width = 125;
             // 
             // button_volverMenu
             // 
@@ -136,6 +98,44 @@
             this.label_ayuda.Name = "label_ayuda";
             this.label_ayuda.Size = new System.Drawing.Size(0, 20);
             this.label_ayuda.TabIndex = 5;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Nombre";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name.Width = 173;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 173;
+            // 
+            // Mail
+            // 
+            this.Mail.HeaderText = "Mail";
+            this.Mail.MinimumWidth = 6;
+            this.Mail.Name = "Mail";
+            this.Mail.Width = 173;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.MinimumWidth = 6;
+            this.DNI.Name = "DNI";
+            this.DNI.Width = 173;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
             // 
             // FormAgregarAmigo
             // 

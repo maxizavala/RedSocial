@@ -22,11 +22,15 @@ namespace RedSocial
             InitializeComponent();
             nombreUsuarioActual.Text = miRed.usuarioActual.nombre;
             nombreCompleto.Text = miRed.usuarioActual.nombre + miRed.usuarioActual.apellido;
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            foreach(Usuario amigos in miRed.mostrarDatos().amigos)
+            {
+                dataGridView_listaAmigos.Rows.Add(amigos.id,amigos.nombre,amigos.apellido,"X");
+            }
         }
 
         private void button_agregarAmigo_Click(object sender, EventArgs e)

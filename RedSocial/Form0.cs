@@ -26,6 +26,8 @@ namespace RedSocial
             hijoLogin = new Form1(miRed,false);
             logued = false;
 
+            miRed.registrarUsuario("1", "1", "1", "1", "1");
+            miRed.registrarUsuario("2", "2", "2", "2", "2");
             TransfDelegadoLogIn();
         }
 
