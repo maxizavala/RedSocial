@@ -232,10 +232,6 @@ namespace RedSocial
             usuarios[aux2].misPost[aux] = post;
         }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         private void eliminarPost(Post post)
 
         {
