@@ -268,6 +268,21 @@ namespace RedSocial
 
             comentarios.Remove(c);
         }
+
+        //-------------------------------Metodos de busqueda-------------------------------
+
+        public void buscarAmigo(int id) {
+            Usuario aux;
+            
+            foreach (Usuario u in usuarios)
+            {
+                if (u.id == id)
+                {
+                   agregarAmigo(u);
+                }
+               
+            }
+        }
     }
 
 }        
