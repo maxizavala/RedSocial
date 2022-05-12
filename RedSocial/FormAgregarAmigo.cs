@@ -39,17 +39,31 @@ namespace RedSocial
 
         private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
-            label_ayuda.Text = "";
+            if (seleccionado != null && seleccionado != -1)
+            {
+                if (MessageBox.Show("Quiere agregar a "+ dataGridView_Usuarios.Rows[seleccionado].Cells[0].Value+" como amigo?",
+                    "Mensaje",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool agrego;
+                    agrego =miRed.agregarAmigo(int.Parse(dataGridView_Usuarios.Rows[seleccionado].Cells[4].Value.ToString()));
+                    if (!agrego)
+                    {
+                        MessageBox.Show("Ese usuario ya es tu amigo",
+                            "Mensaje",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void seleccionarCelda(object sender, DataGridViewCellEventArgs e)
         {
             seleccionado = e.RowIndex;
 
-            if(seleccionado != null && seleccionado != -1)
-            {
-                //Usuario usuario = dataGridView_Usuarios.Rows[seleccionado].Cells[4].Value;
-            }
+            
         }
 
         private void button_ayuda_Click(object sender, EventArgs e)

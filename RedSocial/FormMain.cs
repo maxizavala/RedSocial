@@ -13,25 +13,75 @@ namespace RedSocial
     public partial class FormMain : Form
     {
         private RedSocial miRed;
+        private int seleccionarAmigo;
+        private int seleccionarPost;
 
         public delegate void TransfDelegadoAgregarAmigo();
         public TransfDelegadoAgregarAmigo eventoAgregarAmigo;
+
+        public delegate void TransfDelegadoPostear();
+        public TransfDelegadoPostear eventoPostear;
         public FormMain(RedSocial miRed)
         {
             this.miRed = miRed;
             InitializeComponent();
             nombreUsuarioActual.Text = miRed.usuarioActual.nombre;
             nombreCompleto.Text = miRed.usuarioActual.nombre + miRed.usuarioActual.apellido;
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            foreach(Usuario amigos in miRed.mostrarDatos().amigos)
+            {
+                dataGridView_listaAmigos.Rows.Add(amigos.id,amigos.nombre,amigos.apellido,"Eliminar");
+            }
         }
 
+        //////////////////////////BOTONES
         private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
             this.eventoAgregarAmigo();
+            this.Close();
+        }
+        private void button_irFormPostear(object sender, EventArgs e)
+        {
+            this.eventoAgregarAmigo();
+            this.Close();
+        }
+
+        ///////////////////////BOTONES DE GRILLAS
+        private void seleccionadorAmigo(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAmigo = e.RowIndex;
+        }
+
+        private void eliminadorAmigo(object sender, DataGridViewCellEventArgs e)
+        {
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
+            {
+                miRed.quitarAmigo(int.Parse(dataGridView_listaAmigos.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                dataGridView_listaAmigos.Rows.Remove(dataGridView_listaAmigos.Rows[seleccionarAmigo]);
+            }
+        }
+        private void seleccionadorPost(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarPost = e.RowIndex;
+        }
+
+        private void eliminadorPost(object sender, DataGridViewCellEventArgs e)
+        {
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
+            {
+                miRed.quitarAmigo(int.Parse(dataGridView_Post.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                dataGridView_Post.Rows.Remove(dataGridView_Post.Rows[seleccionarAmigo]);
+                
+            }
+        }
+
+        private void button_postear_Click(object sender, EventArgs e)
+        {
+            this.eventoPostear();
             this.Close();
         }
     }

@@ -16,6 +16,7 @@ namespace RedSocial
         Form1 hijoLogin;
         FormMain hijoMain;
         FormAgregarAmigo hijoAgregarAmigo;
+        FormPostear hijoPostear;
 
         bool logued;
         public Form0()
@@ -26,6 +27,8 @@ namespace RedSocial
             hijoLogin = new Form1(miRed,false);
             logued = false;
 
+            miRed.registrarUsuario("1", "1", "1", "1", "1");
+            miRed.registrarUsuario("2", "2", "2", "2", "2");
             TransfDelegadoLogIn();
         }
 
@@ -41,7 +44,7 @@ namespace RedSocial
             hijoMain = new FormMain(miRed);
             hijoMain.MdiParent = this;
             hijoMain.eventoAgregarAmigo += TransfDelegadoAgregarAmigo;
-            
+            hijoMain.eventoPostear += TransfDelegadoCrearPost;
             hijoMain.Show();
         }
         private void TransfDelegadoAgregarAmigo()
@@ -50,6 +53,14 @@ namespace RedSocial
             hijoAgregarAmigo.MdiParent = this;
             hijoAgregarAmigo.eventoMain += TransfDelegado;
             hijoAgregarAmigo.Show();
+        }
+
+        private void TransfDelegadoCrearPost()
+        {
+            hijoPostear = new FormPostear(miRed);
+            hijoPostear.MdiParent = this;
+            hijoPostear.eventoMain += TransfDelegado;
+            hijoPostear.Show();
         }
 
     }
