@@ -21,6 +21,10 @@ namespace RedSocial
 
         public delegate void TransfDelegadoPostear();
         public TransfDelegadoPostear eventoPostear;
+
+        public delegate void TransfDelegadoVerPost();
+        public TransfDelegadoVerPost eventoVerPost;
+
         public FormMain(RedSocial miRed)
         {
             this.miRed = miRed;
@@ -86,6 +90,12 @@ namespace RedSocial
         private void button_postear_Click(object sender, EventArgs e)
         {
             this.eventoPostear();
+            this.Close();
+        }
+
+        private void dataGridView_MisPost_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.eventoVerPost();
             this.Close();
         }
     }

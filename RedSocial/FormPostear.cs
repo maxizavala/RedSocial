@@ -65,7 +65,6 @@ namespace RedSocial
                 List<Tag> tags = new List<Tag>();
                 for (int i = 0; i < dataGridView_Tags.Rows.Count-1; i++)
                 {
-                    label_listaTags.Text = dataGridView_Tags.Rows[i].Cells[0].Value.ToString();
                     tags.Add(new Tag(dataGridView_Tags.Rows[i].Cells[0].Value.ToString()));
                 }
                 Post post = new Post(miRed.mostrarDatos(), textBox_publicacion.Text, DateTime.Now);

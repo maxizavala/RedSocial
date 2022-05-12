@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace RedSocial
 {
     public partial class Form1 : Form
@@ -43,6 +45,7 @@ namespace RedSocial
                     textBox_PassReg.Text); //se quitan mas adelante
                 ResultadoRegistro.Text = "USUARIO AGREGADO";
             }
+            //label1.Text = Interaction.InputBox("agregar cambio:");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,10 +55,6 @@ namespace RedSocial
             {
                 this.eventoEvento();
                 this.Close();
-            }
-            else
-            {
-                label3.Text = "ACCESO DENEGADO";
             }
         }
 

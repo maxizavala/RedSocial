@@ -48,6 +48,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VerPost = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelPost.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -105,6 +106,7 @@
             this.dataGridViewTextBoxColumn1,
             this.Posteo,
             this.VerPost,
+            this.Modificar,
             this.dataGridViewButtonColumn1});
             this.dataGridView_MisPost.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_MisPost.Name = "dataGridView_MisPost";
@@ -114,6 +116,7 @@
             this.dataGridView_MisPost.Size = new System.Drawing.Size(559, 457);
             this.dataGridView_MisPost.TabIndex = 0;
             this.dataGridView_MisPost.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorPost);
+            this.dataGridView_MisPost.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MisPost_CellContentClick);
             // 
             // tabPage2
             // 
@@ -147,7 +150,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(379, 609);
+            this.button2.Location = new System.Drawing.Point(447, 609);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 29);
             this.button2.TabIndex = 5;
@@ -177,7 +180,7 @@
             // 
             // button_postear
             // 
-            this.button_postear.Location = new System.Drawing.Point(279, 609);
+            this.button_postear.Location = new System.Drawing.Point(347, 609);
             this.button_postear.Name = "button_postear";
             this.button_postear.Size = new System.Drawing.Size(94, 29);
             this.button_postear.TabIndex = 8;
@@ -247,7 +250,7 @@
             this.Posteo.HeaderText = "Posteo";
             this.Posteo.MinimumWidth = 6;
             this.Posteo.Name = "Posteo";
-            this.Posteo.Width = 360;
+            this.Posteo.Width = 300;
             // 
             // VerPost
             // 
@@ -256,7 +259,14 @@
             this.VerPost.Name = "VerPost";
             this.VerPost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VerPost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.VerPost.Width = 125;
+            this.VerPost.Width = 90;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Width = 70;
             // 
             // dataGridViewButtonColumn1
             // 
@@ -319,6 +329,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Posteo;
         private DataGridViewButtonColumn VerPost;
+        private DataGridViewButtonColumn Modificar;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }
