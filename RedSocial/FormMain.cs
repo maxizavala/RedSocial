@@ -13,6 +13,7 @@ namespace RedSocial
     public partial class FormMain : Form
     {
         private RedSocial miRed;
+        private int seleccionarAmigo;
 
         public delegate void TransfDelegadoAgregarAmigo();
         public TransfDelegadoAgregarAmigo eventoAgregarAmigo;
@@ -33,10 +34,26 @@ namespace RedSocial
             }
         }
 
+
         private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
             this.eventoAgregarAmigo();
             this.Close();
+        }
+
+
+        private void seleccionadorAmigo(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAmigo = e.RowIndex;
+        }
+
+        private void eliminadorAmigo(object sender, DataGridViewCellEventArgs e)
+        {
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
+            {
+                miRed.quitarAmigo(int.Parse(dataGridView_listaAmigos.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                
+            }
         }
     }
 }
