@@ -22,7 +22,7 @@ namespace RedSocial
         {
             InitializeComponent();
             this.miRed = miRed;
-            foreach(Usuario dato in miRed.usuarios)
+            foreach(Usuario dato in miRed.getUsuarios())
             {
                 this.dataGridView_Usuarios.Rows.Add(
                     dato.nombre,dato.apellido,dato.mail,dato.dni,dato.id);
