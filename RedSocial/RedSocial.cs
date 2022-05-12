@@ -227,9 +227,17 @@ namespace RedSocial
         {
             int aux = posts.FindIndex(p => p.id == post.id);
             posts[aux] = post;
+
+            int aux2 = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+            usuarios[aux2].misPost[aux] = post;
         }
 
+<<<<<<< HEAD
+
+        public void eliminarPost(Post post)
+=======
         private void eliminarPost(Post post)
+>>>>>>> master
         {
             //busco al usuario en la lista de usuarios
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
