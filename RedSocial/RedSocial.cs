@@ -61,7 +61,7 @@ namespace RedSocial
             cantidadUsuarios++;
         }
 
-        private void modificarUsuario(Usuario u)
+        public void modificarUsuario(Usuario u)
         {
             //Busco en la lista el indice del usuario
             int aux = usuarios.FindIndex(usuario => usuario.id == u.id);
