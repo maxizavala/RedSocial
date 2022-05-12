@@ -36,6 +36,10 @@ namespace RedSocial
             {
                 dataGridView_listaAmigos.Rows.Add(amigos.id,amigos.nombre,amigos.apellido,"Eliminar");
             }
+            foreach(Post post in miRed.mostrarDatos().misPost)
+            {
+                dataGridView_MisPost.Rows.Add(post.id,post.contenido);
+            }
         }
 
         //////////////////////////BOTONES
@@ -73,8 +77,8 @@ namespace RedSocial
         {
             if (seleccionarAmigo != null && seleccionarAmigo != -1)
             {
-                miRed.quitarAmigo(int.Parse(dataGridView_Post.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
-                dataGridView_Post.Rows.Remove(dataGridView_Post.Rows[seleccionarAmigo]);
+                miRed.quitarAmigo(int.Parse(dataGridView_MisPost.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                dataGridView_MisPost.Rows.Remove(dataGridView_MisPost.Rows[seleccionarAmigo]);
                 
             }
         }

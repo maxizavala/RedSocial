@@ -15,6 +15,7 @@ namespace RedSocial
         RedSocial miRed;
         int tagSeleccionado;
 
+
         public delegate void TransfDelegado();
         public TransfDelegado eventoMain;
         public FormPostear(RedSocial red)
@@ -33,8 +34,7 @@ namespace RedSocial
         {
             if(textBox_Tags.Text != "")
             {
-                Tag tag = new Tag(textBox_Tags.Text);
-                dataGridView_Tags.Rows.Add(tag.id,tag.palabra,"Eliminar");
+                dataGridView_Tags.Rows.Add(textBox_Tags.Text, "Eliminar");
             }
         }
         private void eliminarTag(object sender, DataGridViewCellEventArgs e)
@@ -46,7 +46,6 @@ namespace RedSocial
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
                     dataGridView_Tags.Rows.Remove(dataGridView_Tags.Rows[tagSeleccionado]);
                 }
             }
@@ -54,6 +53,27 @@ namespace RedSocial
         private void seleccionarTag(object sender, DataGridViewCellEventArgs e)
         {
             tagSeleccionado = e.RowIndex;
+        }
+
+        private void Postear_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Quiere publicar como esta el post?",
+                    "Mensaje",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                List<Tag> tags = new List<Tag>();
+                for (int i = 0; i < dataGridView_Tags.Rows.Count-1; i++)
+                {
+                    label_listaTags.Text = dataGridView_Tags.Rows[i].Cells[0].Value.ToString();
+                    tags.Add(new Tag(dataGridView_Tags.Rows[i].Cells[0].Value.ToString()));
+                }
+                Post post = new Post(miRed.mostrarDatos(), textBox_publicacion.Text, DateTime.Now);
+                miRed.postear(post,tags);
+
+                this.eventoMain();
+                this.Close();
+            }
         }
     }
 }
