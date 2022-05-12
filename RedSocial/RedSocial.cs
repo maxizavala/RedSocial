@@ -8,7 +8,7 @@ namespace RedSocial
 {
     public class RedSocial
     {
-        private List<Usuario> usuarios;
+        public List<Usuario> usuarios;
         public Usuario usuarioActual { get; set; }
         private int cantidadUsuarios;
         private List<Post> posts;
