@@ -119,7 +119,7 @@ namespace RedSocial
             {
                 if (usuario.id == id)
                 {
-                    quitarAmigo(usuario);
+                    quitarAmigo(usuario); 
                 }
             }
         }
