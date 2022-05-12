@@ -13,6 +13,7 @@ namespace RedSocial
     public partial class FormPostear : Form
     {
         RedSocial miRed;
+        int tagSeleccionado;
 
         public delegate void TransfDelegado();
         public TransfDelegado eventoMain;
@@ -26,6 +27,33 @@ namespace RedSocial
         {
             this.eventoMain();
             this.Close();
+        }
+
+        private void button_agregarTag_Click(object sender, EventArgs e)
+        {
+            if(textBox_Tags.Text != "")
+            {
+                Tag tag = new Tag(textBox_Tags.Text);
+                dataGridView_Tags.Rows.Add(tag.id,tag.palabra,"Eliminar");
+            }
+        }
+        private void eliminarTag(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tagSeleccionado != null && tagSeleccionado != -1)
+            {
+                if (MessageBox.Show("Quiere quitar este tag?",
+                    "Mensaje",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    dataGridView_Tags.Rows.Remove(dataGridView_Tags.Rows[tagSeleccionado]);
+                }
+            }
+        }
+        private void seleccionarTag(object sender, DataGridViewCellEventArgs e)
+        {
+            tagSeleccionado = e.RowIndex;
         }
     }
 }
