@@ -69,17 +69,39 @@ namespace RedSocial
             usuarios.Remove(u); 
         }
 
+        //Buscar usuario
+        public Usuario buscarUsuario(string nombre, string apellido)
+        {
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.nombre.Equals(nombre) && usuario.apellido.Equals(apellido))
+                {  
+                    return usuario;
+                }
+            }
+            return null;
+        }
+
         //Seccion Amigos
 
-        public void agregarAmigo(Usuario amigo)
+        public bool agregarAmigo(Usuario amigo)
         {
-            //Se agrega a amigos al usuario
-            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
-            usuarios[aux].amigos.Add(amigo);
+            if(usuarioActual.id == amigo.id)
+            {
+                return false;
+            }
+            else {
+                //Se agrega a amigos al usuario
+                int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
+                usuarios[aux].amigos.Add(amigo);
 
-            //El usuario que fue agregado, tambien agrega al usuario que lo agrego a amigos
-            int aux2 = usuarios.FindIndex(usuario => usuario.id == amigo.id);
-            usuarios[aux2].amigos.Add(usuarioActual);
+                //El usuario que fue agregado, tambien agrega al usuario que lo agrego a amigos
+                int aux2 = usuarios.FindIndex(usuario => usuario.id == amigo.id);
+                usuarios[aux2].amigos.Add(usuarioActual);
+
+                return true;
+            }
+            
         }
 
         public void quitarAmigo(Usuario exAmigo)
