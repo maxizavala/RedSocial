@@ -14,14 +14,14 @@ namespace RedSocial
 
 		static public int cantidadComentario = 0;
 
-		public Comentario(Post post, Usuario usuario, string Contenido, DateTime Fecha)
+		public Comentario(Post post, Usuario usuario, string contenido, DateTime fecha)
 		{
 
 			this.id = cantidadComentario;
 			this.post = post;
 			this.usuario = usuario;
-			this.contenido = Contenido;
-			this.fecha = Fecha;
+			this.contenido = contenido;
+			this.fecha = fecha;
 
 			cantidadComentario++;
 
