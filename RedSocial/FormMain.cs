@@ -18,6 +18,9 @@ namespace RedSocial
 
         public delegate void TransfDelegadoAgregarAmigo();
         public TransfDelegadoAgregarAmigo eventoAgregarAmigo;
+
+        public delegate void TransfDelegadoPostear();
+        public TransfDelegadoPostear eventoPostear;
         public FormMain(RedSocial miRed)
         {
             this.miRed = miRed;
@@ -76,6 +79,10 @@ namespace RedSocial
             }
         }
 
-        
+        private void button_postear_Click(object sender, EventArgs e)
+        {
+            this.eventoPostear();
+            this.Close();
+        }
     }
 }

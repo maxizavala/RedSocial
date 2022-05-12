@@ -12,9 +12,20 @@ namespace RedSocial
 {
     public partial class FormPostear : Form
     {
-        public FormPostear()
-        {
+        RedSocial miRed;
+
+        public delegate void TransfDelegado();
+        public TransfDelegado eventoMain;
+        public FormPostear(RedSocial red)
+        {   
+            miRed = red;
             InitializeComponent();
+        }
+
+        private void VolverAMenu_Click(object sender, EventArgs e)
+        {
+            this.eventoMain();
+            this.Close();
         }
     }
 }

@@ -52,6 +52,7 @@
             this.VolverAMenu.TabIndex = 0;
             this.VolverAMenu.Text = "Volver a menu";
             this.VolverAMenu.UseVisualStyleBackColor = true;
+            this.VolverAMenu.Click += new System.EventHandler(this.VolverAMenu_Click);
             // 
             // Postear
             // 
