@@ -80,19 +80,6 @@ namespace RedSocial
             }
         }
 
-        //Buscar usuario
-        public Usuario buscarUsuario(string nombre, string apellido)
-        {
-            foreach (Usuario usuario in usuarios)
-            {
-                if (usuario.nombre.Equals(nombre) && usuario.apellido.Equals(apellido))
-                {  
-                    return usuario;
-                }
-            }
-            return null;
-        }
-
         //Seccion Amigos
 
         public bool agregarAmigo(Usuario amigo)
