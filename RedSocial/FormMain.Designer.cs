@@ -32,9 +32,7 @@
             this.nombreCompleto = new System.Windows.Forms.Label();
             this.panelPost = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reacciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView_Post = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,10 +44,16 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPost = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelPost.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Post)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listaAmigos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreUsuarioActual
@@ -83,7 +87,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridView_Post);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(60, 3, 3, 3);
             this.tabPage1.Name = "tabPage1";
@@ -93,35 +97,25 @@
             this.tabPage1.Text = "Mis post";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridView_Post
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Post.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Post.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Posteo,
-            this.Reacciones});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(559, 457);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Posteo
-            // 
-            this.Posteo.HeaderText = "Posteo";
-            this.Posteo.MinimumWidth = 6;
-            this.Posteo.Name = "Posteo";
-            this.Posteo.Width = 125;
-            // 
-            // Reacciones
-            // 
-            this.Reacciones.HeaderText = "Column1";
-            this.Reacciones.MinimumWidth = 6;
-            this.Reacciones.Name = "Reacciones";
-            this.Reacciones.Width = 125;
+            this.VerPost,
+            this.dataGridViewButtonColumn1});
+            this.dataGridView_Post.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_Post.Name = "dataGridView_Post";
+            this.dataGridView_Post.RowHeadersVisible = false;
+            this.dataGridView_Post.RowHeadersWidth = 51;
+            this.dataGridView_Post.RowTemplate.Height = 29;
+            this.dataGridView_Post.Size = new System.Drawing.Size(559, 457);
+            this.dataGridView_Post.TabIndex = 0;
+            this.dataGridView_Post.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorPost);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -147,6 +141,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Buscar Post";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button_irFormPostear);
             // 
             // label_listaDeAmigos
             // 
@@ -226,6 +221,41 @@
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminar.Width = 70;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(4, 1);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(555, 453);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // Posteo
+            // 
+            this.Posteo.HeaderText = "Posteo";
+            this.Posteo.MinimumWidth = 6;
+            this.Posteo.Name = "Posteo";
+            this.Posteo.Width = 360;
+            // 
+            // VerPost
+            // 
+            this.VerPost.HeaderText = "Ver Post";
+            this.VerPost.MinimumWidth = 6;
+            this.VerPost.Name = "VerPost";
+            this.VerPost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerPost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.VerPost.Width = 125;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn1.MinimumWidth = 6;
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn1.Width = 70;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -247,8 +277,10 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panelPost.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Post)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listaAmigos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,13 +298,15 @@
         private Label label_listaDeAmigos;
         private Button button_agregarAmigo;
         private Button button_postear;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Posteo;
-        private DataGridViewTextBoxColumn Reacciones;
+        private DataGridView dataGridView_Post;
         private DataGridView dataGridView_listaAmigos;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewButtonColumn Eliminar;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn Posteo;
+        private DataGridViewButtonColumn VerPost;
+        private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

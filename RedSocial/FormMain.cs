@@ -14,6 +14,7 @@ namespace RedSocial
     {
         private RedSocial miRed;
         private int seleccionarAmigo;
+        private int seleccionarPost;
 
         public delegate void TransfDelegadoAgregarAmigo();
         public TransfDelegadoAgregarAmigo eventoAgregarAmigo;
@@ -34,14 +35,19 @@ namespace RedSocial
             }
         }
 
-
+        //////////////////////////BOTONES
         private void button_agregarAmigo_Click(object sender, EventArgs e)
         {
             this.eventoAgregarAmigo();
             this.Close();
         }
+        private void button_irFormPostear(object sender, EventArgs e)
+        {
+            this.eventoAgregarAmigo();
+            this.Close();
+        }
 
-
+        ///////////////////////BOTONES DE GRILLAS
         private void seleccionadorAmigo(object sender, DataGridViewCellEventArgs e)
         {
             seleccionarAmigo = e.RowIndex;
@@ -55,5 +61,21 @@ namespace RedSocial
                 dataGridView_listaAmigos.Rows.Remove(dataGridView_listaAmigos.Rows[seleccionarAmigo]);
             }
         }
+        private void seleccionadorPost(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarPost = e.RowIndex;
+        }
+
+        private void eliminadorPost(object sender, DataGridViewCellEventArgs e)
+        {
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
+            {
+                miRed.quitarAmigo(int.Parse(dataGridView_Post.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                dataGridView_Post.Rows.Remove(dataGridView_Post.Rows[seleccionarAmigo]);
+                
+            }
+        }
+
+        
     }
 }
