@@ -232,12 +232,8 @@ namespace RedSocial
             usuarios[aux2].misPost[aux] = post;
         }
 
-<<<<<<< HEAD
-
-        public void eliminarPost(Post post)
-=======
         private void eliminarPost(Post post)
->>>>>>> master
+
         {
             //busco al usuario en la lista de usuarios
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
