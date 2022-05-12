@@ -144,15 +144,25 @@ namespace RedSocial
 
         }
 
-        public void reaccionar(int id, Reaccion reaccion)
-        {
+        public bool reaccionar(int id, int tipoReaccion, Usuario u)
+        {  
             foreach(Post p in posts)
             {
                 if(p.id == id)
                 {
-                    reaccionar(p, reaccion);
+                    foreach (Reaccion r in p.reacciones) {
+                        if (r.usuario.Equals(u))
+                        {
+                            return false;
+                        }
+                    }
+
+                    reaccionar(p, new(tipoReaccion, p, u));
+                    return true;
+
                 }
             }
+            return false;
         }
 
         private void modificarReaccion(Post post, Reaccion r)
@@ -166,13 +176,13 @@ namespace RedSocial
             posts[aux2].reacciones[aux] = r;
         }
 
-        public void modificarReaccion(int id, Reaccion reaccion)
+        public void modificarReaccion(int id, int tipoReaccion, Usuario u)
         {
             foreach (Post p in posts)
             {
                 if (p.id == id)
                 {
-                    modificarReaccion(p, reaccion);
+                    modificarReaccion(p, new(tipoReaccion,p,u));
                 }
             }
         }
