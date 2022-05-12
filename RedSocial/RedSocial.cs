@@ -46,6 +46,11 @@ namespace RedSocial
             return usuarioEncontrado;
         }
 
+        //Cerrar sesión
+        public void cerrarSesion () {
+            usuarioActual = null;
+        }
+
         //Seccion de logica Usuarios
 
         public void registrarUsuario(string dni, string nombre, string apellido, string mail,
