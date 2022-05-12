@@ -86,7 +86,7 @@ namespace RedSocial
 
         public bool agregarAmigo(Usuario amigo)
         {
-            if(usuarioActual.id == amigo.id || !usuarios.Contains(amigo))
+            if(usuarioActual.id == amigo.id)
             {
                 return false;
             }
@@ -299,16 +299,18 @@ namespace RedSocial
 
         //-------------------------------Metodos de busqueda-------------------------------
 
-        public void buscarAmigo(int id) {
+        public bool buscarAmigo(int id) {
             
             foreach (Usuario u in usuarios)
             {
                 if (u.id == id)
                 {
-                   agregarAmigo(u);
+                    return agregarAmigo(u);
                 }
                
             }
+
+            return false;
         }
 
         
