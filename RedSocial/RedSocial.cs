@@ -353,13 +353,34 @@ namespace RedSocial
         }
 
         //Borrar comentario
-        public void QuitarComentario(Post p, Comentario c) {
-            posts[p.id].comentarios.Remove(c);
+        private void quitarComentario(Post p, Comentario c) {
+
+            int aux2 = posts.FindIndex(post => post.id == p.id);
+            
+            posts[aux2].comentarios.Remove(c);
 
             int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
             usuarios[aux].misComentarios.Remove(c);
 
             comentarios.Remove(c);
+        }
+
+        public void quitarComentario(int idPost, int idComentario) {
+
+            foreach (Post p in posts)
+            {
+                if (p.id == idPost)
+                {
+                    foreach (Comentario c in p.comentarios)
+                    {
+                        if (c.id == idComentario)
+                        {
+                            quitarComentario(p, c);
+                        }
+                    }
+
+                }
+            }
         }
 
 
