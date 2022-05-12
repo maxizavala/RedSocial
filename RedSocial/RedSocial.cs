@@ -300,7 +300,6 @@ namespace RedSocial
         //-------------------------------Metodos de busqueda-------------------------------
 
         public void buscarAmigo(int id) {
-            Usuario aux;
             
             foreach (Usuario u in usuarios)
             {
