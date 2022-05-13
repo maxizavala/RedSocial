@@ -42,7 +42,7 @@ namespace RedSocial
                     textBox_NombreReg.Text,
                     textBox_apellidoRegistro.Text,
                     textBox_MailReg.Text,
-                    textBox_PassReg.Text); //se quitan mas adelante
+                    textBox_PassReg.Text);
                 ResultadoRegistro.Text = "USUARIO AGREGADO";
             }
             //label1.Text = Interaction.InputBox("agregar cambio:");
@@ -50,11 +50,17 @@ namespace RedSocial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (miRed.iniciarSesion(textBox1.Text, textBox2.Text))
             {
                 this.eventoEvento();
                 this.Close();
+            }
+            else {
+                MessageBox.Show("Usuario o contraseña incorrecta",
+                    "Mensaje",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 
