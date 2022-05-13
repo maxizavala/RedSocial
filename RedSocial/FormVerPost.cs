@@ -14,6 +14,9 @@ namespace RedSocial
     {
         RedSocial miRed;
         Post post;
+
+        public delegate void TransfDelegado();
+        public TransfDelegado eventoMain;
         public FormVerPost(RedSocial red, int idPost)
         {
             miRed = red;
@@ -22,6 +25,10 @@ namespace RedSocial
             label_PostComentario.Text = post.contenido;
         }
 
-
+        private void button_volverMain_Click(object sender, EventArgs e)
+        {
+            this.eventoMain();
+            this.Close();
+        }
     }
 }

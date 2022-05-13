@@ -69,7 +69,7 @@ namespace RedSocial
         {
             hijoVerPost = new FormVerPost(miRed, idPost);
             hijoVerPost.MdiParent = this;
-            
+            hijoVerPost.eventoMain += TransfDelegado;
             hijoVerPost.Show();
         }
     }
