@@ -70,7 +70,6 @@ namespace RedSocial
                 }
                 Post post = new Post(miRed.mostrarDatos(), textBox_publicacion.Text, DateTime.Now);
                 miRed.postear(post,tags);
-
                 this.eventoMain();
                 this.Close();
             }

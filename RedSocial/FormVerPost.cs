@@ -31,9 +31,8 @@ namespace RedSocial
             }
             foreach(Comentario comentario in post.comentarios)
             {
-                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modifiars");
+                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modificar");
             }
-            label_listaTag.Text = post.comentarios.Count.ToString();
             label_meGusta.Text = "Me gusta: " + post.reacciones.Count();
         }
 
