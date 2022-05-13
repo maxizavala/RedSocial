@@ -43,7 +43,7 @@ namespace RedSocial
             {
                 Comentario comentario = new Comentario(post, miRed.usuarioActual, textBox_Comentar.Text, DateTime.Now);
                 miRed.comentar(post, comentario);
-                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Eliminar");
+                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modificar");
                 textBox_Comentar.Text = "";
             }
         }
@@ -58,7 +58,8 @@ namespace RedSocial
                 "Mensaje",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes){
-
+                miRed.quitarComentario(post.id, int.Parse(dataGridView_Comentarios.Rows[comentarioSeleccionado].Cells[0].Value.ToString()));
+                dataGridView_Comentarios.Rows.Remove(dataGridView_Comentarios.Rows[comentarioSeleccionado]);
             }
             else
             {

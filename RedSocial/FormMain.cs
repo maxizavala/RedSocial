@@ -42,7 +42,7 @@ namespace RedSocial
             }
             foreach(Post post in miRed.mostrarDatos().misPost)
             {
-                dataGridView_MisPost.Rows.Add(post.id,post.contenido);
+                dataGridView_MisPost.Rows.Add(post.id,post.contenido,"Ver Post");
             }
         }
 
