@@ -35,12 +35,11 @@
             this.Tags = new System.Windows.Forms.Label();
             this.textBox_Tags = new System.Windows.Forms.TextBox();
             this.dataGridView_Tags = new System.Windows.Forms.DataGridView();
+            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label_listaTags = new System.Windows.Forms.Label();
             this.button_agregarTag = new System.Windows.Forms.Button();
             this.nombreUsuarioActual = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +113,20 @@
             this.dataGridView_Tags.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionarTag);
             this.dataGridView_Tags.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminarTag);
             // 
+            // Tag
+            // 
+            this.Tag.HeaderText = "Tag";
+            this.Tag.MinimumWidth = 6;
+            this.Tag.Name = "Tag";
+            this.Tag.Width = 340;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 70;
+            // 
             // label_listaTags
             // 
             this.label_listaTags.AutoSize = true;
@@ -144,35 +157,11 @@
             this.nombreUsuarioActual.TabIndex = 9;
             this.nombreUsuarioActual.Text = "Crear post";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(284, 320);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(150, 104);
-            this.listBox1.TabIndex = 10;
-            // 
-            // Tag
-            // 
-            this.Tag.HeaderText = "Tag";
-            this.Tag.MinimumWidth = 6;
-            this.Tag.Name = "Tag";
-            this.Tag.Width = 340;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 70;
-            // 
             // FormPostear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.nombreUsuarioActual);
             this.Controls.Add(this.button_agregarTag);
             this.Controls.Add(this.label_listaTags);
@@ -205,7 +194,6 @@
         private Label label_listaTags;
         private Button button_agregarTag;
         private Label nombreUsuarioActual;
-        private ListBox listBox1;
         private DataGridViewTextBoxColumn Tag;
         private DataGridViewButtonColumn Eliminar;
     }

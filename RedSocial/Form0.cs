@@ -18,6 +18,7 @@ namespace RedSocial
         FormAgregarAmigo hijoAgregarAmigo;
         FormPostear hijoPostear;
         FormVerPost hijoVerPost;
+        FormBuscarPost hijoBuscarPost;
 
         bool logued;
         public Form0()
@@ -73,5 +74,12 @@ namespace RedSocial
             hijoVerPost.Show();
         }
         
+        private void TransfDelegadoVerPost()
+        {
+            hijoBuscarPost = new FormBuscarPost(miRed);
+            hijoBuscarPost.MdiParent = this;
+            hijoBuscarPost.eventoMain += TransfDelegado;
+            hijoBuscarPost.Show();
+        }
     }
 }

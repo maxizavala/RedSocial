@@ -42,7 +42,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonLogOut = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_BuscarPost = new System.Windows.Forms.Button();
             this.label_listaDeAmigos = new System.Windows.Forms.Label();
             this.button_agregarAmigo = new System.Windows.Forms.Button();
             this.button_postear = new System.Windows.Forms.Button();
@@ -207,15 +207,15 @@
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
-            // button2
+            // button_BuscarPost
             // 
-            this.button2.Location = new System.Drawing.Point(447, 609);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Buscar Post";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_irFormPostear);
+            this.button_BuscarPost.Location = new System.Drawing.Point(447, 609);
+            this.button_BuscarPost.Name = "button_BuscarPost";
+            this.button_BuscarPost.Size = new System.Drawing.Size(133, 29);
+            this.button_BuscarPost.TabIndex = 5;
+            this.button_BuscarPost.Text = "Buscar Post";
+            this.button_BuscarPost.UseVisualStyleBackColor = true;
+            this.button_BuscarPost.Click += new System.EventHandler(this.button_BuscarPost_Click);
             // 
             // label_listaDeAmigos
             // 
@@ -320,7 +320,7 @@
             this.Controls.Add(this.button_postear);
             this.Controls.Add(this.button_agregarAmigo);
             this.Controls.Add(this.label_listaDeAmigos);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_BuscarPost);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.panelPost);
             this.Controls.Add(this.nombreCompleto);
@@ -349,7 +349,7 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Button buttonLogOut;
-        private Button button2;
+        private Button button_BuscarPost;
         private Label label_listaDeAmigos;
         private Button button_agregarAmigo;
         private Button button_postear;

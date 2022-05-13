@@ -25,9 +25,11 @@ namespace RedSocial
         public delegate void TransfDelegadoVerPost(int idPost);
         public TransfDelegadoVerPost eventoVerPost;
 
-
         public delegate void TransfDelegadoLogIn();
         public TransfDelegadoLogIn eventoLogIn;
+
+        public delegate void TransfDelegadoBuscarPost();
+        public TransfDelegadoBuscarPost eventoBuscarPost;
 
         public FormMain(RedSocial miRed)
         {
@@ -107,6 +109,12 @@ namespace RedSocial
         {
             miRed.cerrarSesion();
             this.eventoLogIn();
+            this.Close();
+        }
+
+        private void button_BuscarPost_Click(object sender, EventArgs e)
+        {
+
             this.Close();
         }
     }
