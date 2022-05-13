@@ -33,6 +33,7 @@ namespace RedSocial
             {
                 dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modifiars");
             }
+            label_meGusta.Text = "Me gusta: " + post.reacciones.Count();
         }
 
         private void button_volverMain_Click(object sender, EventArgs e)
@@ -105,20 +106,18 @@ namespace RedSocial
 
         private void buttonMeGusta_Click(object sender, EventArgs e)
         {
-            miRed.reaccionar(post.id, 1, miRed.usuarioActual);
-            buttonMeGusta.Text = "No me gusta";
-            label_meGusta.Text = "Me gusta: " + Reaccion.cantidadReaccion;
-            buttonMeGusta.Click -= buttonMeGusta_Click;
-            buttonMeGusta.Click += buttonNoMeGusta;
+            miRed.reaccionar(post.id,1, miRed.usuarioActual);
+            label_meGusta.Text = "Me gusta: " + post.reacciones.Count;
+            //buttonMeGusta.Click -= buttonMeGusta_Click;
+            //buttonMeGusta.Click += buttonNoMeGusta;
         }
 
         private void buttonNoMeGusta(object sender, EventArgs e)
         {
-            miRed.quitarReaccion(post.id, 1);
-            buttonMeGusta.Text = "Me gusta";
+            miRed.quitarReaccion(post.id);
             label_meGusta.Text = "Me gusta: " + post.reacciones.Count;
-            buttonMeGusta.Click -= buttonNoMeGusta;
-            buttonMeGusta.Click += buttonMeGusta_Click;
+            //buttonMeGusta.Click -= buttonNoMeGusta;
+            //buttonMeGusta.Click += buttonMeGusta_Click;
         }
     }
 }

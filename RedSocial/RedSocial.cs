@@ -196,7 +196,7 @@ namespace RedSocial
             posts[aux2].reacciones.Remove(r);
         }
 
-        public void quitarReaccion(int id, int idReaccion)
+        public void quitarReaccion(int id)
         {
             foreach (Post p in posts)
             {
@@ -205,7 +205,7 @@ namespace RedSocial
                     for(int aux = 0; aux < p.reacciones.Count; aux++)
                     //foreach(Reaccion r2 in p.reacciones)
                     {
-                        if (p.reacciones[aux].id == idReaccion)
+                        if (p.reacciones[aux].usuario.Equals(usuarioActual))
                         {
                             quitarReaccion(p, p.reacciones[aux]);
                         }

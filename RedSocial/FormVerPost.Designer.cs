@@ -43,6 +43,7 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonMeGusta = new System.Windows.Forms.Button();
             this.label_meGusta = new System.Windows.Forms.Label();
+            this.button_QuitarMegusta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
@@ -173,9 +174,9 @@
             // 
             // buttonMeGusta
             // 
-            this.buttonMeGusta.Location = new System.Drawing.Point(607, 508);
+            this.buttonMeGusta.Location = new System.Drawing.Point(607, 484);
             this.buttonMeGusta.Name = "buttonMeGusta";
-            this.buttonMeGusta.Size = new System.Drawing.Size(112, 29);
+            this.buttonMeGusta.Size = new System.Drawing.Size(124, 29);
             this.buttonMeGusta.TabIndex = 10;
             this.buttonMeGusta.Text = "Me Gusta";
             this.buttonMeGusta.UseVisualStyleBackColor = true;
@@ -184,17 +185,28 @@
             // label_meGusta
             // 
             this.label_meGusta.AutoSize = true;
-            this.label_meGusta.Location = new System.Drawing.Point(772, 512);
+            this.label_meGusta.Location = new System.Drawing.Point(773, 507);
             this.label_meGusta.Name = "label_meGusta";
             this.label_meGusta.Size = new System.Drawing.Size(77, 20);
             this.label_meGusta.TabIndex = 11;
             this.label_meGusta.Text = "Me gusta: ";
+            // 
+            // button_QuitarMegusta
+            // 
+            this.button_QuitarMegusta.Location = new System.Drawing.Point(607, 519);
+            this.button_QuitarMegusta.Name = "button_QuitarMegusta";
+            this.button_QuitarMegusta.Size = new System.Drawing.Size(124, 29);
+            this.button_QuitarMegusta.TabIndex = 12;
+            this.button_QuitarMegusta.Text = "Ya no me gusta";
+            this.button_QuitarMegusta.UseVisualStyleBackColor = true;
+            this.button_QuitarMegusta.Click += new System.EventHandler(this.buttonNoMeGusta);
             // 
             // FormVerPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.button_QuitarMegusta);
             this.Controls.Add(this.label_meGusta);
             this.Controls.Add(this.buttonMeGusta);
             this.Controls.Add(this.buttonEliminar);
@@ -234,5 +246,6 @@
         private Button buttonEliminar;
         private Button buttonMeGusta;
         private Label label_meGusta;
+        private Button button_QuitarMegusta;
     }
 }
