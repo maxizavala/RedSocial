@@ -400,11 +400,12 @@ namespace RedSocial
             {
                 if (p.id == idPost)
                 {
-                    foreach (Comentario c in p.comentarios)
+                    for (int i = 0; i < p.comentarios.Count; i++)
+                    //foreach (Comentario c in p.comentarios)
                     {
-                        if (c.id == idComentario)
+                        if (p.comentarios[i].id == idComentario)
                         {
-                            quitarComentario(p, c);
+                            quitarComentario(p, p.comentarios[i]);
                         }
                     }
 
