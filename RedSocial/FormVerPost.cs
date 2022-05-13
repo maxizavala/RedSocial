@@ -29,6 +29,10 @@ namespace RedSocial
             {
                 dataGridView_Tags.Rows.Add(tag.palabra);
             }
+            foreach(Comentario comentario in post.comentarios)
+            {
+                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modifiars");
+            }
         }
 
         private void button_volverMain_Click(object sender, EventArgs e)
