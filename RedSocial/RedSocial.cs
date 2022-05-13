@@ -338,11 +338,14 @@ namespace RedSocial
                     bPost.Add(post);
                 } else
                 {
-                    foreach (Tag p in post.tags)
+                    foreach (Tag p in t)
                     {
-                        if (t.Contains(p))
+                        foreach (Tag q in post.tags)
                         {
-                            bPost.Add(post);
+                            if (q.palabra == p.palabra)
+                            {
+                                bPost.Add(post);
+                            }
                         }
                     }
                 }
