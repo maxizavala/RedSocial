@@ -33,9 +33,12 @@
             this.panelPost = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView_MisPost = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPost = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label_listaDeAmigos = new System.Windows.Forms.Label();
             this.button_agregarAmigo = new System.Windows.Forms.Button();
@@ -45,9 +48,6 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerPost = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelPost.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MisPost)).BeginInit();
@@ -114,6 +114,30 @@
             this.dataGridView_MisPost.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorPost);
             this.dataGridView_MisPost.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MisPost_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // Posteo
+            // 
+            this.Posteo.HeaderText = "Posteo";
+            this.Posteo.MinimumWidth = 6;
+            this.Posteo.Name = "Posteo";
+            this.Posteo.Width = 465;
+            // 
+            // VerPost
+            // 
+            this.VerPost.HeaderText = "Ver Post";
+            this.VerPost.MinimumWidth = 6;
+            this.VerPost.Name = "VerPost";
+            this.VerPost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerPost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.VerPost.Width = 90;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView2);
@@ -135,14 +159,14 @@
             this.dataGridView2.Size = new System.Drawing.Size(555, 453);
             this.dataGridView2.TabIndex = 0;
             // 
-            // button1
+            // buttonLogOut
             // 
-            this.button1.Location = new System.Drawing.Point(12, 609);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Location = new System.Drawing.Point(12, 609);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(133, 29);
+            this.buttonLogOut.TabIndex = 4;
+            this.buttonLogOut.Text = "Cerrar Sesion";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -233,30 +257,6 @@
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminar.Width = 70;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // Posteo
-            // 
-            this.Posteo.HeaderText = "Posteo";
-            this.Posteo.MinimumWidth = 6;
-            this.Posteo.Name = "Posteo";
-            this.Posteo.Width = 465;
-            // 
-            // VerPost
-            // 
-            this.VerPost.HeaderText = "Ver Post";
-            this.VerPost.MinimumWidth = 6;
-            this.VerPost.Name = "VerPost";
-            this.VerPost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerPost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.VerPost.Width = 90;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -267,7 +267,7 @@
             this.Controls.Add(this.button_agregarAmigo);
             this.Controls.Add(this.label_listaDeAmigos);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.panelPost);
             this.Controls.Add(this.nombreCompleto);
             this.Controls.Add(this.nombreUsuarioActual);
@@ -294,7 +294,7 @@
         private TabControl panelPost;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private Button button1;
+        private Button buttonLogOut;
         private Button button2;
         private Label label_listaDeAmigos;
         private Button button_agregarAmigo;

@@ -366,6 +366,7 @@ namespace RedSocial
         {
             foreach(Comentario comentario in comentarios)
             {
+                if (!comentario.usuario.Equals(usuarioActual)) return;
                 comentario.contenido = nuevoComentario;
             }
         }
@@ -373,6 +374,7 @@ namespace RedSocial
         //Borrar comentario
         private void quitarComentario(Post p, Comentario c) {
 
+            if(!c.usuario.Equals(usuarioActual)) return;
             int aux2 = posts.FindIndex(post => post.id == p.id);
             
             posts[aux2].comentarios.Remove(c);
