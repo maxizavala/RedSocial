@@ -179,8 +179,8 @@
             this.dataGridView_PosteosRed.RowTemplate.Height = 29;
             this.dataGridView_PosteosRed.Size = new System.Drawing.Size(535, 592);
             this.dataGridView_PosteosRed.TabIndex = 11;
-            this.dataGridView_PosteosRed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionarTag);
-            this.dataGridView_PosteosRed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminarTag);
+            this.dataGridView_PosteosRed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorAmigo);
+            this.dataGridView_PosteosRed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VerPost);
             // 
             // idPosteos
             // 

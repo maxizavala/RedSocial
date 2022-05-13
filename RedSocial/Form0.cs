@@ -81,6 +81,7 @@ namespace RedSocial
             hijoBuscarPost = new FormBuscarPost(miRed);
             hijoBuscarPost.MdiParent = this;
             hijoBuscarPost.eventoMain += TransfDelegado;
+            hijoBuscarPost.eventoVerPost += TransfDelegadoVerPost;
             hijoBuscarPost.Show();
         }
     }

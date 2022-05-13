@@ -14,9 +14,14 @@ namespace RedSocial
     {
         RedSocial miRed;
         int tagSeleccionado;
+        int seleccionarAmigo;
 
         public delegate void TransfDelegado();
         public TransfDelegado eventoMain;
+
+        public delegate void TransfDelegadoVerPost(int idPost);
+        public TransfDelegadoVerPost eventoVerPost;
+
         public FormBuscarPost(RedSocial red)
         {
             miRed = red;
@@ -70,6 +75,18 @@ namespace RedSocial
             {
                 dataGridView_PosteosRed.Rows.Add(post.id, post.contenido, "Ver Post");
             }
+        }
+        private void VerPost(object sender, DataGridViewCellEventArgs e)
+        {
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
+            {
+                this.eventoVerPost(int.Parse(dataGridView_PosteosRed.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                this.Close();
+            }
+        }
+        private void seleccionadorAmigo(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAmigo = e.RowIndex;
         }
     }
 }

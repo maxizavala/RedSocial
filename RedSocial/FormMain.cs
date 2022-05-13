@@ -96,13 +96,11 @@ namespace RedSocial
 
         private void dataGridView_MisPost_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (seleccionarAmigo != null && seleccionarAmigo != -1) 
+            if (seleccionarAmigo != null && seleccionarAmigo != -1)
             {
                 this.eventoVerPost(int.Parse(dataGridView_MisPost.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
                 this.Close();
             }
-            
-        
         }
 
         private void buttonLogOut_Click(object sender, EventArgs e)
