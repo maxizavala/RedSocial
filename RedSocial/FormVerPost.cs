@@ -98,5 +98,23 @@ namespace RedSocial
                 }
             }
         }
+
+        private void buttonMeGusta_Click(object sender, EventArgs e)
+        {
+            miRed.reaccionar(post.id, 1, miRed.usuarioActual);
+            buttonMeGusta.Text = "No me gusta";
+            label_meGusta.Text = "Me gusta: " + Reaccion.cantidadReaccion;
+            buttonMeGusta.Click -= buttonMeGusta_Click;
+            buttonMeGusta.Click += buttonNoMeGusta;
+        }
+
+        private void buttonNoMeGusta(object sender, EventArgs e)
+        {
+            miRed.quitarReaccion(post.id, 1);
+            buttonMeGusta.Text = "Me gusta";
+            label_meGusta.Text = "Me gusta: " + post.reacciones.Count;
+            buttonMeGusta.Click -= buttonNoMeGusta;
+            buttonMeGusta.Click += buttonMeGusta_Click;
+        }
     }
 }

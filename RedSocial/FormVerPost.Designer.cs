@@ -41,6 +41,8 @@
             this.button_volverMain = new System.Windows.Forms.Button();
             this.button_modificar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonMeGusta = new System.Windows.Forms.Button();
+            this.label_meGusta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
@@ -169,11 +171,32 @@
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
+            // buttonMeGusta
+            // 
+            this.buttonMeGusta.Location = new System.Drawing.Point(607, 508);
+            this.buttonMeGusta.Name = "buttonMeGusta";
+            this.buttonMeGusta.Size = new System.Drawing.Size(112, 29);
+            this.buttonMeGusta.TabIndex = 10;
+            this.buttonMeGusta.Text = "Me Gusta";
+            this.buttonMeGusta.UseVisualStyleBackColor = true;
+            this.buttonMeGusta.Click += new System.EventHandler(this.buttonMeGusta_Click);
+            // 
+            // label_meGusta
+            // 
+            this.label_meGusta.AutoSize = true;
+            this.label_meGusta.Location = new System.Drawing.Point(772, 512);
+            this.label_meGusta.Name = "label_meGusta";
+            this.label_meGusta.Size = new System.Drawing.Size(77, 20);
+            this.label_meGusta.TabIndex = 11;
+            this.label_meGusta.Text = "Me gusta: ";
+            // 
             // FormVerPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.label_meGusta);
+            this.Controls.Add(this.buttonMeGusta);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.button_modificar);
             this.Controls.Add(this.button_volverMain);
@@ -209,5 +232,7 @@
         private DataGridViewButtonColumn Modificar;
         private Button button_modificar;
         private Button buttonEliminar;
+        private Button buttonMeGusta;
+        private Label label_meGusta;
     }
 }

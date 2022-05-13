@@ -145,11 +145,11 @@ namespace RedSocial
 
         }
 
-        public bool reaccionar(int id, int tipoReaccion, Usuario u)
+        public bool reaccionar(int idPost, int tipoReaccion, Usuario u)
         {  
             foreach(Post p in posts)
             {
-                if(p.id == id)
+                if(p.id == idPost)
                 {
                     foreach (Reaccion r in p.reacciones) {
                         if (r.usuario.Equals(u))
@@ -202,11 +202,12 @@ namespace RedSocial
             {
                 if (p.id == id)
                 {
-                    foreach(Reaccion r2 in p.reacciones)
+                    for(int aux = 0; aux < p.reacciones.Count; aux++)
+                    //foreach(Reaccion r2 in p.reacciones)
                     {
-                        if (r2.id == idReaccion)
+                        if (p.reacciones[aux].id == idReaccion)
                         {
-                            quitarReaccion(p, r2);
+                            quitarReaccion(p, p.reacciones[aux]);
                         }
                     }
                  
