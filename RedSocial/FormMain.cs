@@ -107,7 +107,7 @@ namespace RedSocial
         {
             if (seleccionarAmigo != null && seleccionarAmigo != -1)
             {
-                this.eventoVerPost(int.Parse(dataGridView_PosteosRed.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                this.eventoVerPost(int.Parse(dataGridView_PosteosRed.Rows[seleccionarPost].Cells[0].Value.ToString()));
                 this.Close();
             }
         }
