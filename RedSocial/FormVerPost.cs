@@ -68,5 +68,13 @@ namespace RedSocial
                 dataGridView_Comentarios.Rows[comentarioSeleccionado].Cells[1].Value = nuevoComentario;
             }
         }
+
+        private void button_modificar_Click(object sender, EventArgs e)
+        {
+            string nuevoContenido = Interaction.InputBox("Ingrese el replazo del contenido:");
+            miRed.modificarPost(post.id,nuevoContenido);
+            label_PostComentario.Text = nuevoContenido;
+            
+        }
     }
 }

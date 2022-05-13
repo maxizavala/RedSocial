@@ -39,6 +39,8 @@
             this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_listaTag = new System.Windows.Forms.Label();
             this.button_volverMain = new System.Windows.Forms.Button();
+            this.button_modificar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +149,32 @@
             this.button_volverMain.UseVisualStyleBackColor = true;
             this.button_volverMain.Click += new System.EventHandler(this.button_volverMain_Click);
             // 
+            // button_modificar
+            // 
+            this.button_modificar.Location = new System.Drawing.Point(607, 609);
+            this.button_modificar.Name = "button_modificar";
+            this.button_modificar.Size = new System.Drawing.Size(94, 29);
+            this.button_modificar.TabIndex = 8;
+            this.button_modificar.Text = "Modificar";
+            this.button_modificar.UseVisualStyleBackColor = true;
+            this.button_modificar.Click += new System.EventHandler(this.button_modificar_Click);
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Location = new System.Drawing.Point(804, 609);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(94, 29);
+            this.buttonEliminar.TabIndex = 9;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            // 
             // FormVerPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.buttonEliminar);
+            this.Controls.Add(this.button_modificar);
             this.Controls.Add(this.button_volverMain);
             this.Controls.Add(this.label_listaTag);
             this.Controls.Add(this.dataGridView_Tags);
@@ -183,5 +206,7 @@
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Comentarios;
         private DataGridViewButtonColumn Modificar;
+        private Button button_modificar;
+        private Button buttonEliminar;
     }
 }

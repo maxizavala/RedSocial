@@ -239,13 +239,16 @@ namespace RedSocial
             posts.Add(post); //agrego post a la lista de posts
         }
 
-        public void modificarPost(Post post)
+        public bool modificarPost(int idPost,string comentario)
         {
-            int aux = posts.FindIndex(p => p.id == post.id);
-            posts[aux] = post;
-
-            int aux2 = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
-            usuarios[aux2].misPost[aux] = post;
+            
+            int aux = posts.FindIndex(p => p.id == idPost);
+            Post post = posts[aux];
+            if (!post.usuario.Equals(usuarioActual)) return false;
+            post.contenido = comentario;
+            //busca el espacio de memoria una vez y como modifica el espacio de memoria 
+            //se modifica en todas partes
+            return true;
         }
 
         private void eliminarPost(Post post)
