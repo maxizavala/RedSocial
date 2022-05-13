@@ -44,6 +44,11 @@ namespace RedSocial
             {
                 dataGridView_MisPost.Rows.Add(post.id,post.contenido,"Ver Post");
             }
+            foreach (Post post in miRed.mostrarPost())
+            {
+                dataGridView_PosteosRed.Rows.Add(post.id, post.contenido, "Ver Post");
+            }
+
         }
 
         //////////////////////////BOTONES
@@ -75,16 +80,6 @@ namespace RedSocial
         private void seleccionadorPost(object sender, DataGridViewCellEventArgs e)
         {
             seleccionarPost = e.RowIndex;
-        }
-
-        private void eliminadorPost(object sender, DataGridViewCellEventArgs e)
-        {
-            if (seleccionarAmigo != null && seleccionarAmigo != -1)
-            {
-                miRed.quitarAmigo(int.Parse(dataGridView_MisPost.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
-                dataGridView_MisPost.Rows.Remove(dataGridView_MisPost.Rows[seleccionarAmigo]);
-                
-            }
         }
 
         private void button_postear_Click(object sender, EventArgs e)

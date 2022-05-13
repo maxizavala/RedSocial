@@ -32,14 +32,13 @@
             this.textBox_Comentar = new System.Windows.Forms.TextBox();
             this.button_Comentar = new System.Windows.Forms.Button();
             this.dataGridView_Comentarios = new System.Windows.Forms.DataGridView();
-            this.dataGridView_Tags = new System.Windows.Forms.DataGridView();
-            this.label_listaTag = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button_volverMain = new System.Windows.Forms.Button();
-            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView_Tags = new System.Windows.Forms.DataGridView();
+            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_listaTag = new System.Windows.Forms.Label();
+            this.button_volverMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
@@ -87,54 +86,6 @@
             this.dataGridView_Comentarios.TabIndex = 3;
             this.dataGridView_Comentarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Comentarios_CellContentClick);
             // 
-            // dataGridView_Tags
-            // 
-            this.dataGridView_Tags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tag});
-            this.dataGridView_Tags.Location = new System.Drawing.Point(598, 80);
-            this.dataGridView_Tags.Name = "dataGridView_Tags";
-            this.dataGridView_Tags.RowHeadersWidth = 51;
-            this.dataGridView_Tags.RowTemplate.Height = 29;
-            this.dataGridView_Tags.Size = new System.Drawing.Size(300, 398);
-            this.dataGridView_Tags.TabIndex = 4;
-            // 
-            // label_listaTag
-            // 
-            this.label_listaTag.AutoSize = true;
-            this.label_listaTag.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_listaTag.Location = new System.Drawing.Point(848, 49);
-            this.label_listaTag.Name = "label_listaTag";
-            this.label_listaTag.Size = new System.Drawing.Size(50, 28);
-            this.label_listaTag.TabIndex = 5;
-            this.label_listaTag.Text = "Tags";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(608, 537);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button_volverMain
-            // 
-            this.button_volverMain.Location = new System.Drawing.Point(12, 609);
-            this.button_volverMain.Name = "button_volverMain";
-            this.button_volverMain.Size = new System.Drawing.Size(115, 29);
-            this.button_volverMain.TabIndex = 7;
-            this.button_volverMain.Text = "Volver Inicio";
-            this.button_volverMain.UseVisualStyleBackColor = true;
-            this.button_volverMain.Click += new System.EventHandler(this.button_volverMain_Click);
-            // 
-            // Tag
-            // 
-            this.Tag.HeaderText = "Tag";
-            this.Tag.MinimumWidth = 6;
-            this.Tag.Name = "Tag";
-            this.Tag.Width = 240;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -157,13 +108,51 @@
             this.Modificar.Name = "Modificar";
             this.Modificar.Width = 77;
             // 
+            // dataGridView_Tags
+            // 
+            this.dataGridView_Tags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Tags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tag});
+            this.dataGridView_Tags.Location = new System.Drawing.Point(598, 80);
+            this.dataGridView_Tags.Name = "dataGridView_Tags";
+            this.dataGridView_Tags.RowHeadersWidth = 51;
+            this.dataGridView_Tags.RowTemplate.Height = 29;
+            this.dataGridView_Tags.Size = new System.Drawing.Size(300, 398);
+            this.dataGridView_Tags.TabIndex = 4;
+            // 
+            // Tag
+            // 
+            this.Tag.HeaderText = "Tag";
+            this.Tag.MinimumWidth = 6;
+            this.Tag.Name = "Tag";
+            this.Tag.Width = 240;
+            // 
+            // label_listaTag
+            // 
+            this.label_listaTag.AutoSize = true;
+            this.label_listaTag.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_listaTag.Location = new System.Drawing.Point(848, 49);
+            this.label_listaTag.Name = "label_listaTag";
+            this.label_listaTag.Size = new System.Drawing.Size(50, 28);
+            this.label_listaTag.TabIndex = 5;
+            this.label_listaTag.Text = "Tags";
+            // 
+            // button_volverMain
+            // 
+            this.button_volverMain.Location = new System.Drawing.Point(12, 609);
+            this.button_volverMain.Name = "button_volverMain";
+            this.button_volverMain.Size = new System.Drawing.Size(115, 29);
+            this.button_volverMain.TabIndex = 7;
+            this.button_volverMain.Text = "Volver Inicio";
+            this.button_volverMain.UseVisualStyleBackColor = true;
+            this.button_volverMain.Click += new System.EventHandler(this.button_volverMain_Click);
+            // 
             // FormVerPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.Controls.Add(this.button_volverMain);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label_listaTag);
             this.Controls.Add(this.dataGridView_Tags);
             this.Controls.Add(this.dataGridView_Comentarios);
@@ -189,7 +178,6 @@
         private DataGridView dataGridView_Comentarios;
         private DataGridView dataGridView_Tags;
         private Label label_listaTag;
-        private Button button2;
         private Button button_volverMain;
         private DataGridViewTextBoxColumn Tag;
         private DataGridViewTextBoxColumn ID;
