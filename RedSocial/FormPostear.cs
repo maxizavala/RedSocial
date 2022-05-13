@@ -35,6 +35,7 @@ namespace RedSocial
             if(textBox_Tags.Text != "")
             {
                 dataGridView_Tags.Rows.Add(textBox_Tags.Text, "Eliminar");
+                textBox_Tags.Text = "";
             }
         }
         private void eliminarTag(object sender, DataGridViewCellEventArgs e)

@@ -72,13 +72,6 @@ namespace RedSocial
             hijoVerPost.eventoMain += TransfDelegado;
             hijoVerPost.Show();
         }
-        private void TransfDelegadoLogIn()
-        {
-            hijoLogin = new Form1(miRed,false);
-            hijoLogin.MdiParent = this;
-            hijoLogin.eventoMain += TransfDelegado;
-            hijoLogin.Show();
-        }
-
+        
     }
 }
