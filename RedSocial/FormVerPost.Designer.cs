@@ -89,6 +89,7 @@
             this.dataGridView_Comentarios.RowTemplate.Height = 29;
             this.dataGridView_Comentarios.Size = new System.Drawing.Size(477, 369);
             this.dataGridView_Comentarios.TabIndex = 3;
+            this.dataGridView_Comentarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectorComentario);
             this.dataGridView_Comentarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Comentarios_CellContentClick);
             // 
             // ID

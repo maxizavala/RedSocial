@@ -57,7 +57,7 @@ namespace RedSocial
         {
             comentarioSeleccionado = e.RowIndex;
         }
-            private void dataGridView_Comentarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_Comentarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(MessageBox.Show("Quiere borrar su comentario?",
                 "Mensaje",
