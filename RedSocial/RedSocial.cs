@@ -284,11 +284,10 @@ namespace RedSocial
 
         public void eliminarPost(int id) {
 
-            foreach (Post post in posts) 
-            {
-                if (post.id == id)
+            for (int i = 0; i < posts.Count; i++) {
+                if (posts[i].id == id)
                 {
-                    eliminarPost(post);
+                    eliminarPost(posts[i]);
                 }
             }
         }

@@ -76,5 +76,18 @@ namespace RedSocial
             label_PostComentario.Text = nuevoContenido;
             
         }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Quiere borrar su Post?",
+                "Mensaje",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                miRed.eliminarPost(post.id);
+                this.eventoMain();
+                this.Close();
+            }
+        }
     }
 }
