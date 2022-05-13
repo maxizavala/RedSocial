@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace RedSocial
     {
         RedSocial miRed;
         Post post;
+        int comentarioSeleccionado;
 
         public delegate void TransfDelegado();
         public TransfDelegado eventoMain;
@@ -23,6 +25,10 @@ namespace RedSocial
             post = miRed.buscarPost(idPost);
             InitializeComponent();
             label_PostComentario.Text = post.contenido;
+            foreach(Tag tag in post.tags)
+            {
+                dataGridView_Tags.Rows.Add(tag.palabra);
+            }
         }
 
         private void button_volverMain_Click(object sender, EventArgs e)
@@ -35,9 +41,31 @@ namespace RedSocial
         {
             if(textBox_Comentar.Text != "")
             {
-                miRed.comentar(post, new Comentario(post, miRed.usuarioActual, textBox_Comentar.Text, DateTime.Now));
+                Comentario comentario = new Comentario(post, miRed.usuarioActual, textBox_Comentar.Text, DateTime.Now);
+                miRed.comentar(post, comentario);
+                dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Eliminar");
+                textBox_Comentar.Text = "";
             }
-            label_listaTag.Text = DateTime.Now.ToString();
+        }
+
+        private void selectorComentario(object sender, DataGridViewCellEventArgs e)
+        {
+            comentarioSeleccionado = e.RowIndex;
+        }
+            private void dataGridView_Comentarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(MessageBox.Show("Quiere borrar su comentario?",
+                "Mensaje",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes){
+
+            }
+            else
+            {
+                string nuevoComentario = Interaction.InputBox("Ingrese el replazo de comentario:");
+                miRed.modificarComentario(int.Parse(dataGridView_Comentarios.Rows[comentarioSeleccionado].Cells[0].Value.ToString()),nuevoComentario);
+                dataGridView_Comentarios.Rows[comentarioSeleccionado].Cells[1].Value = nuevoComentario;
+            }
         }
     }
 }

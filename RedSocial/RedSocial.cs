@@ -362,10 +362,12 @@ namespace RedSocial
         }
 
         //Modificar comentario
-        public void ModificarComentario(Comentario c)
+        public void modificarComentario(int idComentario, string nuevoComentario)
         {
-            int auxC = comentarios.FindIndex(comentario => comentario.id == c.id);
-            comentarios[auxC] = c;
+            foreach(Comentario comentario in comentarios)
+            {
+                comentario.contenido = nuevoComentario;
+            }
         }
 
         //Borrar comentario

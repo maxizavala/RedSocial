@@ -31,16 +31,17 @@
             this.label_PostComentario = new System.Windows.Forms.Label();
             this.textBox_Comentar = new System.Windows.Forms.TextBox();
             this.button_Comentar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Comentarios = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Tags = new System.Windows.Forms.DataGridView();
             this.label_listaTag = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button_volverMain = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             this.SuspendLayout();
             // 
             // label_PostComentario
@@ -70,52 +71,33 @@
             this.button_Comentar.UseVisualStyleBackColor = true;
             this.button_Comentar.Click += new System.EventHandler(this.button_Comentar_Click);
             // 
-            // dataGridView1
+            // dataGridView_Comentarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Comentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Comentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Comentarios,
-            this.Eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(37, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(477, 369);
-            this.dataGridView1.TabIndex = 3;
+            this.Modificar});
+            this.dataGridView_Comentarios.Location = new System.Drawing.Point(37, 212);
+            this.dataGridView_Comentarios.Name = "dataGridView_Comentarios";
+            this.dataGridView_Comentarios.RowHeadersVisible = false;
+            this.dataGridView_Comentarios.RowHeadersWidth = 51;
+            this.dataGridView_Comentarios.RowTemplate.Height = 29;
+            this.dataGridView_Comentarios.Size = new System.Drawing.Size(477, 369);
+            this.dataGridView_Comentarios.TabIndex = 3;
+            this.dataGridView_Comentarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Comentarios_CellContentClick);
             // 
-            // ID
+            // dataGridView_Tags
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            this.ID.Width = 125;
-            // 
-            // Comentarios
-            // 
-            this.Comentarios.HeaderText = "Comentarios";
-            this.Comentarios.MinimumWidth = 6;
-            this.Comentarios.Name = "Comentarios";
-            this.Comentarios.Width = 400;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 70;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(598, 80);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(300, 398);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridView_Tags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Tags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tag});
+            this.dataGridView_Tags.Location = new System.Drawing.Point(598, 80);
+            this.dataGridView_Tags.Name = "dataGridView_Tags";
+            this.dataGridView_Tags.RowHeadersWidth = 51;
+            this.dataGridView_Tags.RowTemplate.Height = 29;
+            this.dataGridView_Tags.Size = new System.Drawing.Size(300, 398);
+            this.dataGridView_Tags.TabIndex = 4;
             // 
             // label_listaTag
             // 
@@ -146,6 +128,35 @@
             this.button_volverMain.UseVisualStyleBackColor = true;
             this.button_volverMain.Click += new System.EventHandler(this.button_volverMain_Click);
             // 
+            // Tag
+            // 
+            this.Tag.HeaderText = "Tag";
+            this.Tag.MinimumWidth = 6;
+            this.Tag.Name = "Tag";
+            this.Tag.Width = 240;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // Comentarios
+            // 
+            this.Comentarios.HeaderText = "Comentarios";
+            this.Comentarios.MinimumWidth = 6;
+            this.Comentarios.Name = "Comentarios";
+            this.Comentarios.Width = 395;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Width = 77;
+            // 
             // FormVerPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -154,8 +165,8 @@
             this.Controls.Add(this.button_volverMain);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label_listaTag);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Tags);
+            this.Controls.Add(this.dataGridView_Comentarios);
             this.Controls.Add(this.button_Comentar);
             this.Controls.Add(this.textBox_Comentar);
             this.Controls.Add(this.label_PostComentario);
@@ -163,8 +174,8 @@
             this.Name = "FormVerPost";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVerPost";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Comentarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,13 +186,14 @@
         private Label label_PostComentario;
         private TextBox textBox_Comentar;
         private Button button_Comentar;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridView_Comentarios;
+        private DataGridView dataGridView_Tags;
         private Label label_listaTag;
         private Button button2;
+        private Button button_volverMain;
+        private DataGridViewTextBoxColumn Tag;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Comentarios;
-        private DataGridViewButtonColumn Eliminar;
-        private Button button_volverMain;
+        private DataGridViewButtonColumn Modificar;
     }
 }
