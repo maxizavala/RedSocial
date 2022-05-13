@@ -282,14 +282,17 @@ namespace RedSocial
 
         }
 
-        public void eliminarPost(int id) {
+        public bool eliminarPost(int id) {
 
             for (int i = 0; i < posts.Count; i++) {
                 if (posts[i].id == id)
                 {
+                    if (!posts[i].usuario.Equals(usuarioActual)) return false;
                     eliminarPost(posts[i]);
+                    return true;
                 }
             }
+            return false;
         }
 
         //---------------------------MOSTRAR DATOS-------------------

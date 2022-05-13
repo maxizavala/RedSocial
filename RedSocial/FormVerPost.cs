@@ -84,9 +84,18 @@ namespace RedSocial
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                miRed.eliminarPost(post.id);
-                this.eventoMain();
-                this.Close();
+                if (miRed.eliminarPost(post.id))
+                {
+                    this.eventoMain();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usted no es dueño del post",
+                        "Mensaje",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
         }
     }
