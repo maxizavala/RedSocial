@@ -348,7 +348,17 @@ namespace RedSocial
 
 
         //Comentar
-        public void Comentar(Post p, Comentario c) {
+        public void cometar(int idPost,string comentario) 
+        {
+            foreach(Post post in posts)
+            {
+                if(post.id == idPost)
+                {
+                    comentar(post, new Comentario(post,usuarioActual, comentario, DateTime.Now));
+                }
+            }
+        }
+        public void comentar(Post p, Comentario c) {
 
             c.usuario = usuarioActual;
             c.post = p;
