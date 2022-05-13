@@ -169,7 +169,7 @@
             this.dataGridView_PosteosRed.Size = new System.Drawing.Size(555, 453);
             this.dataGridView_PosteosRed.TabIndex = 0;
             this.dataGridView_PosteosRed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionadorPost);
-            this.dataGridView_PosteosRed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MisPost_CellContentClick);
+            this.dataGridView_PosteosRed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Post_CellContentClick);
             // 
             // idPosteos
             // 
