@@ -21,6 +21,7 @@ namespace RedSocial
             usuarios = new List<Usuario>();
             posts = new List<Post>();
             tags = new List<Tag>();
+            comentarios = new List<Comentario>();
             cantidadUsuarios = 0;
         }
 
@@ -347,17 +348,7 @@ namespace RedSocial
         //Metodos Comentarios
 
 
-        //Comentar
-        public void cometar(int idPost,string comentario) 
-        {
-            foreach(Post post in posts)
-            {
-                if(post.id == idPost)
-                {
-                    comentar(post, new Comentario(post,usuarioActual, comentario, DateTime.Now));
-                }
-            }
-        }
+
         public void comentar(Post p, Comentario c) {
 
             c.usuario = usuarioActual;

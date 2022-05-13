@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label_PostComentario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_Comentar = new System.Windows.Forms.TextBox();
+            this.button_Comentar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label_listaTag = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label_listaTag = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button_volverMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -53,21 +53,22 @@
             this.label_PostComentario.TabIndex = 0;
             this.label_PostComentario.Text = "COmentario de posteo";
             // 
-            // textBox1
+            // textBox_Comentar
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(344, 27);
-            this.textBox1.TabIndex = 1;
+            this.textBox_Comentar.Location = new System.Drawing.Point(48, 150);
+            this.textBox_Comentar.Name = "textBox_Comentar";
+            this.textBox_Comentar.Size = new System.Drawing.Size(344, 27);
+            this.textBox_Comentar.TabIndex = 1;
             // 
-            // button1
+            // button_Comentar
             // 
-            this.button1.Location = new System.Drawing.Point(420, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Comentar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Comentar.Location = new System.Drawing.Point(420, 150);
+            this.button_Comentar.Name = "button_Comentar";
+            this.button_Comentar.Size = new System.Drawing.Size(94, 29);
+            this.button_Comentar.TabIndex = 2;
+            this.button_Comentar.Text = "Comentar";
+            this.button_Comentar.UseVisualStyleBackColor = true;
+            this.button_Comentar.Click += new System.EventHandler(this.button_Comentar_Click);
             // 
             // dataGridView1
             // 
@@ -83,6 +84,28 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(477, 369);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // Comentarios
+            // 
+            this.Comentarios.HeaderText = "Comentarios";
+            this.Comentarios.MinimumWidth = 6;
+            this.Comentarios.Name = "Comentarios";
+            this.Comentarios.Width = 400;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 70;
             // 
             // dataGridView2
             // 
@@ -113,28 +136,6 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            this.ID.Width = 125;
-            // 
-            // Comentarios
-            // 
-            this.Comentarios.HeaderText = "Comentarios";
-            this.Comentarios.MinimumWidth = 6;
-            this.Comentarios.Name = "Comentarios";
-            this.Comentarios.Width = 400;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 70;
-            // 
             // button_volverMain
             // 
             this.button_volverMain.Location = new System.Drawing.Point(12, 609);
@@ -155,8 +156,8 @@
             this.Controls.Add(this.label_listaTag);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button_Comentar);
+            this.Controls.Add(this.textBox_Comentar);
             this.Controls.Add(this.label_PostComentario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVerPost";
@@ -172,8 +173,8 @@
         #endregion
 
         private Label label_PostComentario;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox textBox_Comentar;
+        private Button button_Comentar;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
         private Label label_listaTag;
