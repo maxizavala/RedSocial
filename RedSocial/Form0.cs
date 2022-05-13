@@ -46,6 +46,7 @@ namespace RedSocial
             hijoMain.MdiParent = this;
             hijoMain.eventoAgregarAmigo += TransfDelegadoAgregarAmigo;
             hijoMain.eventoPostear += TransfDelegadoCrearPost;
+            hijoMain.eventoVerPost += TransfDelegadoVerPost;
             hijoMain.Show();
         }
         private void TransfDelegadoAgregarAmigo()
@@ -64,9 +65,9 @@ namespace RedSocial
             hijoPostear.Show();
         }
 
-        private void TransfDelegadoVerPost()
+        private void TransfDelegadoVerPost(int idPost)
         {
-            hijoVerPost = new FormVerPost(miRed);
+            hijoVerPost = new FormVerPost(miRed, idPost);
             hijoVerPost.MdiParent = this;
             
             hijoVerPost.Show();

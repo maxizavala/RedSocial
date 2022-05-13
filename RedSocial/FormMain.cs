@@ -22,7 +22,7 @@ namespace RedSocial
         public delegate void TransfDelegadoPostear();
         public TransfDelegadoPostear eventoPostear;
 
-        public delegate void TransfDelegadoVerPost();
+        public delegate void TransfDelegadoVerPost(int idPost);
         public TransfDelegadoVerPost eventoVerPost;
 
         public FormMain(RedSocial miRed)
@@ -95,8 +95,13 @@ namespace RedSocial
 
         private void dataGridView_MisPost_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.eventoVerPost();
-            this.Close();
+            if (seleccionarAmigo != null && seleccionarAmigo != -1) 
+            {
+                this.eventoVerPost(int.Parse(dataGridView_MisPost.Rows[seleccionarAmigo].Cells[0].Value.ToString()));
+                this.Close();
+            }
+            
+        
         }
     }
 }

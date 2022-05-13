@@ -12,9 +12,16 @@ namespace RedSocial
 {
     public partial class FormVerPost : Form
     {
-        public FormVerPost(RedSocial red)
+        RedSocial miRed;
+        Post post;
+        public FormVerPost(RedSocial red, int idPost)
         {
+            miRed = red;
+            post = miRed.buscarPost(idPost);
             InitializeComponent();
+            label_PostComentario.Text = post.contenido;
         }
+
+
     }
 }

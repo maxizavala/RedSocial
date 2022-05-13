@@ -48,8 +48,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Posteo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VerPost = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelPost.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MisPost)).BeginInit();
@@ -105,9 +103,7 @@
             this.dataGridView_MisPost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Posteo,
-            this.VerPost,
-            this.Modificar,
-            this.dataGridViewButtonColumn1});
+            this.VerPost});
             this.dataGridView_MisPost.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_MisPost.Name = "dataGridView_MisPost";
             this.dataGridView_MisPost.RowHeadersVisible = false;
@@ -250,7 +246,7 @@
             this.Posteo.HeaderText = "Posteo";
             this.Posteo.MinimumWidth = 6;
             this.Posteo.Name = "Posteo";
-            this.Posteo.Width = 300;
+            this.Posteo.Width = 465;
             // 
             // VerPost
             // 
@@ -260,22 +256,6 @@
             this.VerPost.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VerPost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.VerPost.Width = 90;
-            // 
-            // Modificar
-            // 
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Width = 70;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Eliminar";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumn1.Width = 70;
             // 
             // FormMain
             // 
@@ -329,7 +309,5 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Posteo;
         private DataGridViewButtonColumn VerPost;
-        private DataGridViewButtonColumn Modificar;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }
