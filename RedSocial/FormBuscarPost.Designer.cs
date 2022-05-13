@@ -45,13 +45,14 @@
             this.idPosteos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button_FormMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PosteosRed)).BeginInit();
             this.SuspendLayout();
             // 
             // button_agrgarTag
             // 
-            this.button_agrgarTag.Location = new System.Drawing.Point(233, 286);
+            this.button_agrgarTag.Location = new System.Drawing.Point(232, 263);
             this.button_agrgarTag.Name = "button_agrgarTag";
             this.button_agrgarTag.Size = new System.Drawing.Size(110, 33);
             this.button_agrgarTag.TabIndex = 0;
@@ -61,7 +62,7 @@
             // 
             // textBox_Comentario
             // 
-            this.textBox_Comentario.Location = new System.Drawing.Point(44, 69);
+            this.textBox_Comentario.Location = new System.Drawing.Point(43, 46);
             this.textBox_Comentario.Name = "textBox_Comentario";
             this.textBox_Comentario.Size = new System.Drawing.Size(296, 27);
             this.textBox_Comentario.TabIndex = 1;
@@ -69,7 +70,7 @@
             // label_Comentario
             // 
             this.label_Comentario.AutoSize = true;
-            this.label_Comentario.Location = new System.Drawing.Point(44, 46);
+            this.label_Comentario.Location = new System.Drawing.Point(43, 23);
             this.label_Comentario.Name = "label_Comentario";
             this.label_Comentario.Size = new System.Drawing.Size(87, 20);
             this.label_Comentario.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             // dateTimePicker_Desde
             // 
-            this.dateTimePicker_Desde.Location = new System.Drawing.Point(44, 135);
+            this.dateTimePicker_Desde.Location = new System.Drawing.Point(43, 112);
             this.dateTimePicker_Desde.Name = "dateTimePicker_Desde";
             this.dateTimePicker_Desde.Size = new System.Drawing.Size(296, 27);
             this.dateTimePicker_Desde.TabIndex = 3;
@@ -85,7 +86,7 @@
             // label_Desde
             // 
             this.label_Desde.AutoSize = true;
-            this.label_Desde.Location = new System.Drawing.Point(44, 112);
+            this.label_Desde.Location = new System.Drawing.Point(43, 89);
             this.label_Desde.Name = "label_Desde";
             this.label_Desde.Size = new System.Drawing.Size(51, 20);
             this.label_Desde.TabIndex = 4;
@@ -94,7 +95,7 @@
             // label_Hasta
             // 
             this.label_Hasta.AutoSize = true;
-            this.label_Hasta.Location = new System.Drawing.Point(44, 182);
+            this.label_Hasta.Location = new System.Drawing.Point(43, 159);
             this.label_Hasta.Name = "label_Hasta";
             this.label_Hasta.Size = new System.Drawing.Size(47, 20);
             this.label_Hasta.TabIndex = 6;
@@ -102,7 +103,7 @@
             // 
             // dateTimePicker_Hasta
             // 
-            this.dateTimePicker_Hasta.Location = new System.Drawing.Point(44, 205);
+            this.dateTimePicker_Hasta.Location = new System.Drawing.Point(43, 182);
             this.dateTimePicker_Hasta.Name = "dateTimePicker_Hasta";
             this.dateTimePicker_Hasta.Size = new System.Drawing.Size(296, 27);
             this.dateTimePicker_Hasta.TabIndex = 5;
@@ -110,7 +111,7 @@
             // label_Tags
             // 
             this.label_Tags.AutoSize = true;
-            this.label_Tags.Location = new System.Drawing.Point(44, 266);
+            this.label_Tags.Location = new System.Drawing.Point(43, 243);
             this.label_Tags.Name = "label_Tags";
             this.label_Tags.Size = new System.Drawing.Size(38, 20);
             this.label_Tags.TabIndex = 8;
@@ -118,7 +119,7 @@
             // 
             // textBox_Tags
             // 
-            this.textBox_Tags.Location = new System.Drawing.Point(44, 289);
+            this.textBox_Tags.Location = new System.Drawing.Point(43, 266);
             this.textBox_Tags.Name = "textBox_Tags";
             this.textBox_Tags.Size = new System.Drawing.Size(183, 27);
             this.textBox_Tags.TabIndex = 7;
@@ -129,7 +130,7 @@
             this.dataGridView_Tags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tag,
             this.Eliminar});
-            this.dataGridView_Tags.Location = new System.Drawing.Point(44, 340);
+            this.dataGridView_Tags.Location = new System.Drawing.Point(43, 317);
             this.dataGridView_Tags.Name = "dataGridView_Tags";
             this.dataGridView_Tags.RowHeadersVisible = false;
             this.dataGridView_Tags.RowHeadersWidth = 51;
@@ -154,12 +155,13 @@
             // button_Buscar
             // 
             this.button_Buscar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Buscar.Location = new System.Drawing.Point(44, 567);
+            this.button_Buscar.Location = new System.Drawing.Point(43, 544);
             this.button_Buscar.Name = "button_Buscar";
             this.button_Buscar.Size = new System.Drawing.Size(296, 43);
             this.button_Buscar.TabIndex = 10;
             this.button_Buscar.Text = "Buscar";
             this.button_Buscar.UseVisualStyleBackColor = true;
+            this.button_Buscar.Click += new System.EventHandler(this.button_Buscar_Click);
             // 
             // dataGridView_PosteosRed
             // 
@@ -173,8 +175,10 @@
             this.dataGridView_PosteosRed.RowHeadersVisible = false;
             this.dataGridView_PosteosRed.RowHeadersWidth = 51;
             this.dataGridView_PosteosRed.RowTemplate.Height = 29;
-            this.dataGridView_PosteosRed.Size = new System.Drawing.Size(535, 564);
+            this.dataGridView_PosteosRed.Size = new System.Drawing.Size(535, 592);
             this.dataGridView_PosteosRed.TabIndex = 11;
+            this.dataGridView_PosteosRed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionarTag);
+            this.dataGridView_PosteosRed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminarTag);
             // 
             // idPosteos
             // 
@@ -202,11 +206,22 @@
             this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn5.Width = 90;
             // 
+            // button_FormMain
+            // 
+            this.button_FormMain.Location = new System.Drawing.Point(136, 609);
+            this.button_FormMain.Name = "button_FormMain";
+            this.button_FormMain.Size = new System.Drawing.Size(109, 29);
+            this.button_FormMain.TabIndex = 12;
+            this.button_FormMain.Text = "Volver Inicio";
+            this.button_FormMain.UseVisualStyleBackColor = true;
+            this.button_FormMain.Click += new System.EventHandler(this.button_FormMain_Click);
+            // 
             // FormBuscarPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.button_FormMain);
             this.Controls.Add(this.dataGridView_PosteosRed);
             this.Controls.Add(this.button_Buscar);
             this.Controls.Add(this.dataGridView_Tags);
@@ -249,5 +264,6 @@
         private DataGridViewButtonColumn idPosteos;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewButtonColumn dataGridViewTextBoxColumn5;
+        private Button button_FormMain;
     }
 }

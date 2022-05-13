@@ -114,7 +114,7 @@ namespace RedSocial
 
         private void button_BuscarPost_Click(object sender, EventArgs e)
         {
-
+            this.eventoBuscarPost();
             this.Close();
         }
     }
