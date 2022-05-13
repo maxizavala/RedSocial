@@ -430,7 +430,14 @@ namespace RedSocial
             return false;
         }
 
-
+        public Post buscarPost(int id)
+        {
+            foreach(Post p in posts)
+            {
+                if (p.id == id) return p;
+            }
+            return null;
+        }
 
 
 
