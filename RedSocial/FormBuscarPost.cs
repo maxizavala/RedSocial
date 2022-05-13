@@ -27,7 +27,7 @@ namespace RedSocial
         {
             if (textBox_Tags.Text != "")
             {
-                dataGridView_Tags.Rows.Add(textBox_Tags.Text, "Eliminar");
+                dataGridView_TagsBusqueda.Rows.Add(textBox_Tags.Text, "Eliminar");
                 textBox_Tags.Text = "";
             }
         }
@@ -40,16 +40,15 @@ namespace RedSocial
 
         private void eliminarTag(object sender, DataGridViewCellEventArgs e)
         {
-            if (tagSeleccionado != null && tagSeleccionado != -1)
-            {
+            
                 if (MessageBox.Show("Quiere quitar este tag?",
                     "Mensaje",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    dataGridView_Tags.Rows.Remove(dataGridView_Tags.Rows[tagSeleccionado]);
+                    dataGridView_TagsBusqueda.Rows.Remove(dataGridView_TagsBusqueda.Rows[tagSeleccionado]);
                 }
-            }
+            
         }
         private void seleccionarTag(object sender, DataGridViewCellEventArgs e)
         {
@@ -59,8 +58,18 @@ namespace RedSocial
         private void button_Buscar_Click(object sender, EventArgs e)
         {
             string comentario = textBox_Comentario.Text;
-            string desde = dateTimePicker_Desde.Text;
-            label_Comentario.Text = comentario;
+            DateTime desde = dateTimePicker_Desde.Value;
+            DateTime hasta = dateTimePicker_Hasta.Value;
+            List<Tag> tags = new List<Tag>();
+            for (int i = 0; i < dataGridView_TagsBusqueda.Rows.Count - 1; i++)
+            {
+                tags.Add(new Tag(dataGridView_TagsBusqueda.Rows[i].Cells[0].Value.ToString()));
+            }
+            List<Post> encontrado = miRed.buscarPosts(comentario, desde, hasta, tags);
+            foreach (Post post in encontrado)
+            {
+                dataGridView_PosteosRed.Rows.Add(post.id, post.contenido, "Ver Post");
+            }
         }
     }
 }

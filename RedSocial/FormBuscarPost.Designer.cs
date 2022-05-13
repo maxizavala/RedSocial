@@ -37,16 +37,16 @@
             this.dateTimePicker_Hasta = new System.Windows.Forms.DateTimePicker();
             this.label_Tags = new System.Windows.Forms.Label();
             this.textBox_Tags = new System.Windows.Forms.TextBox();
-            this.dataGridView_Tags = new System.Windows.Forms.DataGridView();
+            this.dataGridView_TagsBusqueda = new System.Windows.Forms.DataGridView();
             this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EliminarBusqueda = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_PosteosRed = new System.Windows.Forms.DataGridView();
             this.idPosteos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button_FormMain = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TagsBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PosteosRed)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,19 +124,21 @@
             this.textBox_Tags.Size = new System.Drawing.Size(183, 27);
             this.textBox_Tags.TabIndex = 7;
             // 
-            // dataGridView_Tags
+            // dataGridView_TagsBusqueda
             // 
-            this.dataGridView_Tags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_TagsBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_TagsBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tag,
-            this.Eliminar});
-            this.dataGridView_Tags.Location = new System.Drawing.Point(43, 317);
-            this.dataGridView_Tags.Name = "dataGridView_Tags";
-            this.dataGridView_Tags.RowHeadersVisible = false;
-            this.dataGridView_Tags.RowHeadersWidth = 51;
-            this.dataGridView_Tags.RowTemplate.Height = 29;
-            this.dataGridView_Tags.Size = new System.Drawing.Size(296, 210);
-            this.dataGridView_Tags.TabIndex = 9;
+            this.EliminarBusqueda});
+            this.dataGridView_TagsBusqueda.Location = new System.Drawing.Point(43, 317);
+            this.dataGridView_TagsBusqueda.Name = "dataGridView_TagsBusqueda";
+            this.dataGridView_TagsBusqueda.RowHeadersVisible = false;
+            this.dataGridView_TagsBusqueda.RowHeadersWidth = 51;
+            this.dataGridView_TagsBusqueda.RowTemplate.Height = 29;
+            this.dataGridView_TagsBusqueda.Size = new System.Drawing.Size(296, 210);
+            this.dataGridView_TagsBusqueda.TabIndex = 9;
+            this.dataGridView_TagsBusqueda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seleccionarTag);
+            this.dataGridView_TagsBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminarTag);
             // 
             // Tag
             // 
@@ -145,12 +147,12 @@
             this.Tag.Name = "Tag";
             this.Tag.Width = 220;
             // 
-            // Eliminar
+            // EliminarBusqueda
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 70;
+            this.EliminarBusqueda.HeaderText = "Eliminar";
+            this.EliminarBusqueda.MinimumWidth = 6;
+            this.EliminarBusqueda.Name = "EliminarBusqueda";
+            this.EliminarBusqueda.Width = 70;
             // 
             // button_Buscar
             // 
@@ -224,7 +226,7 @@
             this.Controls.Add(this.button_FormMain);
             this.Controls.Add(this.dataGridView_PosteosRed);
             this.Controls.Add(this.button_Buscar);
-            this.Controls.Add(this.dataGridView_Tags);
+            this.Controls.Add(this.dataGridView_TagsBusqueda);
             this.Controls.Add(this.label_Tags);
             this.Controls.Add(this.textBox_Tags);
             this.Controls.Add(this.label_Hasta);
@@ -238,7 +240,7 @@
             this.Name = "FormBuscarPost";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBuscarPost";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tags)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TagsBusqueda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PosteosRed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,14 +258,14 @@
         private DateTimePicker dateTimePicker_Hasta;
         private Label label_Tags;
         private TextBox textBox_Tags;
-        private DataGridView dataGridView_Tags;
-        private DataGridViewTextBoxColumn Tag;
-        private DataGridViewButtonColumn Eliminar;
+        private DataGridView dataGridView_TagsBusqueda;
         private Button button_Buscar;
         private DataGridView dataGridView_PosteosRed;
         private DataGridViewButtonColumn idPosteos;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewButtonColumn dataGridViewTextBoxColumn5;
         private Button button_FormMain;
+        private DataGridViewTextBoxColumn Tag;
+        private DataGridViewButtonColumn EliminarBusqueda;
     }
 }
