@@ -362,12 +362,6 @@ namespace RedSocial
 
             comentarios.Add(c);
             p.comentarios.Add(c);
-
-            int aux2 = posts.FindIndex(post => post.id == p.id);
-            posts[aux2].comentarios.Add(c);
-
-            int aux = usuarios.FindIndex(usuario => usuario.id == usuarioActual.id);
-            usuarios[aux].misComentarios.Add(c);
         }
 
         //Modificar comentario

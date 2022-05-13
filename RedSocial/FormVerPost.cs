@@ -33,6 +33,7 @@ namespace RedSocial
             {
                 dataGridView_Comentarios.Rows.Add(comentario.id, comentario.contenido, "Modifiars");
             }
+            label_listaTag.Text = post.comentarios.Count.ToString();
             label_meGusta.Text = "Me gusta: " + post.reacciones.Count();
         }
 
