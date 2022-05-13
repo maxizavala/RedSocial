@@ -25,7 +25,6 @@ namespace RedSocial
             InitializeComponent();
 
             miRed = new RedSocial();
-            hijoLogin = new Form1(miRed,false);
             logued = false;
 
             miRed.registrarUsuario("1", "1", "1", "1", "1");
@@ -35,6 +34,7 @@ namespace RedSocial
 
         private void TransfDelegadoLogIn()
         {
+            hijoLogin = new Form1(miRed, false);
             hijoLogin.MdiParent = this;
             hijoLogin.eventoEvento += TransfDelegado;
             hijoLogin.Show();
@@ -72,5 +72,13 @@ namespace RedSocial
             hijoVerPost.eventoMain += TransfDelegado;
             hijoVerPost.Show();
         }
+        private void TransfDelegadoLogIn()
+        {
+            hijoLogin = new Form1(miRed,false);
+            hijoLogin.MdiParent = this;
+            hijoLogin.eventoMain += TransfDelegado;
+            hijoLogin.Show();
+        }
+
     }
 }

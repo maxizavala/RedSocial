@@ -205,6 +205,7 @@
             this.buttonLogOut.TabIndex = 4;
             this.buttonLogOut.Text = "Cerrar Sesion";
             this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // button2
             // 
